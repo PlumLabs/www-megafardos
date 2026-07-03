@@ -44,13 +44,6 @@ export default function Home() {
 
         <div className="flex items-center justify-center gap-3 text-xs text-[var(--green-dark)]/60">
           <a
-            href="mailto:info@megafardos.com"
-            className="hover:text-[var(--gold)] transition-colors underline underline-offset-2"
-          >
-            info@megafardos.com
-          </a>
-          <span className="text-[var(--green-dark)]/20">|</span>
-          <a
             href="https://plum.com.ar"
             target="_blank"
             rel="noopener noreferrer"
