@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green: #4a7c3f;
+  --green-light: #6ba85e;
+  --green-dark: #2d5a25;
+  --gold: #d4a017;
+  --gold-light: #e8b830;
+  --earth: #8B5E3C;
+  --earth-light: #a67c5a;
+  --sky: #e8f0e4;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.alfalfa-bg {
+  background: linear-gradient(180deg, var(--sky) 0%, #d4e8c2 40%, var(--green-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.alfalfa-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--green-dark), transparent);
+  opacity: 0.15;
+}
+
+.campo-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 20px,
+    rgba(74, 124, 63, 0.08) 20px,
+    rgba(74, 124, 63, 0.08) 40px
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tractor-drive,
+  .animate-tractor-bounce {
+    animation: none;
+  }
+}
