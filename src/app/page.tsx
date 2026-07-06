@@ -7,23 +7,19 @@ export default function Home() {
     <main className="alfalfa-bg h-screen flex flex-col relative overflow-hidden">
       <CampoDecorativo />
 
-      <div className="relative z-10 flex flex-col items-center text-center pt-4 md:pt-6 px-4 shrink-0">
+      <div className="relative z-10 flex flex-col items-center text-center pt-12 md:pt-12 px-4 shrink-0">
         <Image
           src="/logo.png"
           alt="Megafardos del Norte"
-          width={100}
-          height={100}
+          width={200}
+          height={200}
           className="object-contain"
           priority
         />
 
-        <h1 className="text-2xl md:text-3xl font-extrabold text-[var(--green-dark)] leading-tight mt-1">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-[var(--green-dark)] leading-tight mt-12">
           Megafardos del Norte
         </h1>
-
-        <p className="text-sm md:text-base text-[var(--green)] font-medium">
-          Alfalfa de primera calidad
-        </p>
       </div>
 
       <TractorAnimation />
@@ -31,14 +27,7 @@ export default function Home() {
       <div className="relative z-10 shrink-0 px-4 pb-3 text-center space-y-1">
         <div className="bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-white/50 inline-block mx-auto max-w-md w-full">
           <p className="text-sm md:text-base text-[var(--earth)] font-semibold">
-            🚜 Estamos en plena cosecha...
-          </p>
-          <p className="text-xs md:text-sm text-[var(--earth-light)] leading-relaxed mt-1">
-            La alfalfa no se cosecha sola (ojalá), y esta página tampoco.
-            Estamos enfardando cada detalle para recibirte como merecés.
-          </p>
-          <p className="text-sm md:text-base text-[var(--green)] font-semibold mt-2">
-            Volvé pronto 🌿
+            🚜 Sitio en construcción
           </p>
         </div>
 
