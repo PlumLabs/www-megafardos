@@ -930,7 +930,6 @@ function ContactForm() {
           <input style={inputStyle} placeholder="+54 9 351..." value={form.tel}
             onChange={e => setForm({ ...form, tel: e.target.value })}
             onFocus={e => (e.target.style.borderColor = '#3D6B32')}
-            onFocus={e => (e.target.style.borderColor = 'var(--green)')}
             onBlur={e => (e.target.style.borderColor = 'var(--border)')} />
         </div>
       </div>
