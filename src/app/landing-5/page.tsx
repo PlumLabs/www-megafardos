@@ -32,25 +32,25 @@ const products = [
   {
     title: 'Megafardos',
     description: 'Fardos de alfalfa de alta calidad para exportación y mercado interno. Proceso controlado desde el campo hasta la entrega.',
-    image: '/images/fardos.jpg',
+    image: '/images/fardos.png',
     tags: ['Exportación', 'Mercado Interno'],
   },
   {
     title: 'Rollos',
     description: 'Rollos de alfalfa producidos con maquinaria de última generación. Ideales para feedlots y tambos.',
-    image: '/images/cubos.jpg',
+    image: '/images/cubos.png',
     tags: ['Feedlots', 'Tambos'],
   },
   {
     title: 'Pellets',
     description: 'Pellets 100% alfalfa en bolsas de 25 kg, Big Bag o granel. Producción propia con certificación SENASA y BPM.',
-    image: '/images/pellets.jpg',
+    image: '/images/pellets.png',
     tags: ['SENASA', 'BPM'],
   },
   {
     title: 'Alfalfa Deshidratada',
     description: 'Alfalfa deshidratada con humedad controlada máxima del 14%. Calidad constante durante todo el año.',
-    image: '/images/deshidratada.jpg',
+    image: '/images/deshidratada.png',
     tags: ['Calidad', 'Consistencia'],
   },
 ]
@@ -527,7 +527,7 @@ export default function Landing5() {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-brand-green/10">
                     <Image
-                      src="/images/logistica.jpg"
+                      src="/images/logistica.png"
                       alt="Logística Megafardos del Norte"
                       fill
                       className="object-cover"

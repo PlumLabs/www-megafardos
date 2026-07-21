@@ -6,25 +6,25 @@ const products = [
     title: 'Megafardos',
     subtitle: 'Mercado interno',
     description: 'Alfalfa de primera calidad en megafardos. Producida integramente con materia prima propia.',
-    image: '/images/fardos.jpg',
+    image: '/images/fardos.png',
   },
   {
     title: 'Megafardos de Exportación',
     subtitle: 'Mercado internacional',
     description: 'Prensados con maquinaria de última generación. Cumplen con estándares internacionales. 40% materia prima de terceros seleccionados.',
-    image: '/images/cubos.jpg',
+    image: '/images/cubos.png',
   },
   {
     title: 'Pellets de Alfalfa',
     subtitle: '100% Alfalfa',
     description: 'Presentaciones: bolsas de 25 kg, Big Bag y granel. Certificados SENASA y BPM. Ideales para feedlots y tambos.',
-    image: '/images/pellets.jpg',
+    image: '/images/pellets.png',
   },
   {
     title: 'Alfalfa Deshidratada',
     subtitle: 'Valor agregado',
     description: 'Alfalfa deshidratada de alta calidad. Procesada con tecnología de punta para preservar sus propiedades nutricionales.',
-    image: '/images/deshidratada.jpg',
+    image: '/images/deshidratada.png',
   },
 ]
 

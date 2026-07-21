@@ -58,7 +58,7 @@ export default function Services() {
             </p>
             <div className="relative h-48 md:h-56 rounded-2xl overflow-hidden mt-8 shadow-lg">
               <Image
-                src="/images/equipo2.jpg"
+                src="/images/equipo2.png"
                 alt="Maquinaria agrícola"
                 fill
                 className="object-cover"

@@ -20,7 +20,7 @@ export default function Contact() {
           <AnimatedSection type="reveal-left">
             <div className="relative h-56 md:h-72 rounded-2xl overflow-hidden mb-8 shadow-xl">
               <Image
-                src="/images/logistica.jpg"
+                src="/images/logistica.png"
                 alt="Logística de Megafardos del Norte"
                 fill
                 className="object-cover"

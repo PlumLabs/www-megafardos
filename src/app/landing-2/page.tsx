@@ -76,7 +76,7 @@ export default function Landing2() {
       <section id="hero" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16 bg-[#1C251D]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.jpg"
+            src="/images/hero.png"
             alt="Planta de Megafardos del Norte"
             fill
             className="object-cover opacity-35"
@@ -147,7 +147,7 @@ export default function Landing2() {
             </p>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-[#2D5A25]/15 shadow-md">
               <Image
-                src="/images/equipo1.jpg"
+                src="/images/equipo1.png"
                 alt="Equipo trabajando en el campo"
                 fill
                 className="object-cover"
@@ -309,7 +309,7 @@ export default function Landing2() {
           <div className="bg-white border border-[#2D5A25]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
             <div className="relative aspect-[4/3] w-full bg-gray-100">
               <Image
-                src="/images/fardos.jpg"
+                src="/images/fardos.png"
                 alt="Megafardos de exportación"
                 fill
                 className="object-cover"
@@ -336,7 +336,7 @@ export default function Landing2() {
           <div className="bg-white border border-[#2D5A25]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
             <div className="relative aspect-[4/3] w-full bg-gray-100">
               <Image
-                src="/images/pellets.jpg"
+                src="/images/pellets.png"
                 alt="Pellets de alfalfa"
                 fill
                 className="object-cover"
@@ -363,7 +363,7 @@ export default function Landing2() {
           <div className="bg-white border border-[#2D5A25]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
             <div className="relative aspect-[4/3] w-full bg-gray-100">
               <Image
-                src="/images/cubos.jpg"
+                src="/images/cubos.png"
                 alt="Megafardos y rollos"
                 fill
                 className="object-cover"
@@ -390,7 +390,7 @@ export default function Landing2() {
           <div className="bg-white border border-[#2D5A25]/10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
             <div className="relative aspect-[4/3] w-full bg-gray-100">
               <Image
-                src="/images/deshidratada.jpg"
+                src="/images/deshidratada.png"
                 alt="Alfalfa deshidratada"
                 fill
                 className="object-cover"
@@ -468,7 +468,7 @@ export default function Landing2() {
 
           <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden border border-white/10 shadow-lg">
             <Image
-              src="/images/calidad.jpg"
+              src="/images/calidad.png"
               alt="Control de calidad de la alfalfa en laboratorio o planta"
               fill
               className="object-cover"

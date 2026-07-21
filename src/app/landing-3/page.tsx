@@ -74,7 +74,7 @@ export default function Landing3() {
         ['Uso final', 'Tambos lecheros (90%)'],
         ['Logística', 'FOB Buenos Aires / Córdoba'],
       ],
-      image: '/images/fardos.jpg',
+      image: '/images/fardos.png',
     },
     {
       id: 'pellets',
@@ -86,7 +86,7 @@ export default function Landing3() {
         ['Mercados', 'Argentina · Brasil · Chile'],
         ['Cliente ideal', 'Feedlots +1.000 animales'],
       ],
-      image: '/images/pellets.jpg',
+      image: '/images/pellets.png',
     },
     {
       id: 'mercado',
@@ -98,7 +98,7 @@ export default function Landing3() {
         ['Disponibilidad', 'Todo el año'],
         ['Centro operativo', 'La Mora, Tucumán'],
       ],
-      image: '/images/cubos.jpg',
+      image: '/images/cubos.png',
     },
   ]
 
@@ -264,92 +264,24 @@ export default function Landing3() {
         {/* Background image layer */}
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <Image
-            src="/images/hero.jpg"
+            src="/images/hero-2.png"
             alt="Campos de alfalfa de Megafardos del Norte"
             fill
             priority
             className="object-cover object-center"
-            style={{ filter: 'brightness(0.45) saturate(0.5)' }}
           />
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(180deg, rgba(245,242,236,0.15) 0%, rgba(245,242,236,0.05) 40%, rgba(245,242,236,0.75) 80%, #F5F2EC 100%)'
-          }} />
+
         </div>
 
         {/* Hero content */}
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '72rem', margin: '0 auto', width: '100%', paddingTop: '12vh' }}>
-          <div style={{ opacity: 1, transform: 'none', marginBottom: '2rem' }}>
-            <span className="badge">
-              Alfalfa · Industrialización · Exportación
-            </span>
-          </div>
 
-          <h1
-            className="serif"
-            style={{
-              fontSize: 'clamp(3rem, 8vw, 7.5rem)',
-              lineHeight: 1.02,
-              fontWeight: 400,
-              color: '#fff',
-              maxWidth: '18ch',
-              marginBottom: '2rem',
-              textShadow: '0 2px 24px rgba(0,0,0,0.25)',
-            }}
-          >
-            Alfalfa de<br />
-            <em style={{ color: '#BDDCB3' }}>excelencia</em>{' '}
-            para mercados que exigen lo mejor.
-          </h1>
 
-          <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '42ch', lineHeight: 1.75, fontSize: '1rem', marginBottom: '3rem', textShadow: '0 1px 8px rgba(0,0,0,0.2)' }}>
-            Producción propia en el Norte Argentino. 1.000 ha de alfalfa, industrialización integral y logística hasta puerto — todo bajo un mismo techo.
-          </p>
-
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a
-              href="#productos"
-              style={{
-                background: 'var(--green)',
-                color: '#fff',
-                padding: '0.9rem 2.2rem',
-                fontSize: '0.75rem',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                transition: 'background 0.2s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.background = 'var(--green-mid)')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'var(--green)')}
-            >
-              Ver productos
-            </a>
-            <a
-              href="#nosotros"
-              style={{
-                border: '1px solid rgba(255,255,255,0.5)',
-                color: '#fff',
-                padding: '0.9rem 2.2rem',
-                fontSize: '0.75rem',
-                fontWeight: 500,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                transition: 'all 0.2s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,0.15)' }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.background = 'transparent' }}
-            >
-              Nuestra historia
-            </a>
-          </div>
         </div>
 
         {/* Scroll indicator */}
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '3rem 0 3.5rem', maxWidth: '72rem', margin: '0 auto', width: '100%' }}>
           <span style={{ fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)' }}>
-            Est. 2013 · La Mora, Argentina
           </span>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.5)' }}>
             <span style={{ fontSize: '0.6rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Scroll</span>
@@ -508,7 +440,7 @@ export default function Landing3() {
       {/* ── FULL-BLEED IMAGE FEATURE ────────────────────────────── */}
       <section style={{ position: 'relative', height: '70vh', overflow: 'hidden' }}>
         <Image
-          src="/images/logistica.jpg"
+          src="/images/logistica.png"
           alt="Logística de megafardos"
           fill
           className="object-cover"
