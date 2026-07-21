@@ -32,7 +32,7 @@ export default function About() {
           <AnimatedSection type="reveal-right" delay={200} className="space-y-6">
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/equipo1.jpg"
+                src="/images/equipo1.png"
                 alt="Equipo de Megafardos del Norte"
                 fill
                 className="object-cover"
