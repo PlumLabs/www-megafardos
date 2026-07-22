@@ -528,7 +528,7 @@ export default function Landing2() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-[#2D5A25]">📍</span>
-                <span className="text-sm font-semibold text-gray-700">Centro Operativo \u201CLa Mora\u201D, Norte Argentino</span>
+                <span className="text-sm font-semibold text-gray-700">Jes\u00FAs Mar\u00EDa, C\u00F3rdoba, Argentina</span>
               </div>
             </div>
 

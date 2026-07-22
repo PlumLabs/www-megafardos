@@ -703,7 +703,7 @@ export default function Landing3() {
                     { label: 'Comercial', val: '+54 9 3525 480179' },
                     { label: 'Administrativo', val: '+54 9 3525 480178' },
                     { label: 'Email', val: 'comercial@megafardos.com' },
-                    { label: 'Ubicación', val: 'La Mora, Tucumán, Argentina' },
+                    { label: 'Ubicación', val: 'Jesús María, Córdoba, Argentina' },
                   ].map((c, i) => (
                     <div key={i} style={{ display: 'flex', fontSize: '0.875rem', paddingBottom: '1rem', borderBottom: '1px solid var(--border)' }}>
                       <span style={{ color: 'var(--muted)', minWidth: '120px', fontSize: '0.75rem', letterSpacing: '0.08em' }}>{c.label}</span>
@@ -768,7 +768,7 @@ export default function Landing3() {
         <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
           <div>
             <span className="serif" style={{ fontSize: '1rem', color: 'var(--ink)', display: 'block', marginBottom: '0.25rem' }}>Megafardos del Norte</span>
-            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>La Mora, Tucumán · Argentina · Est. 2013</span>
+            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>Jesús María · Córdoba · Argentina</span>
           </div>
           <div style={{ display: 'flex', gap: '2rem' }}>
             {['Productos', 'Servicios', 'Nosotros', 'Contacto'].map(link => (
