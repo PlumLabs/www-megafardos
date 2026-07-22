@@ -42,11 +42,13 @@ export default function Landing2() {
       <header className="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#2C3531]/10 px-4 md:px-8 py-4 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 flex-shrink-0">
-              <span className="absolute left-[13px] top-[2px] w-[13px] h-[18px] rounded-[70%_70%_70%_0%] bg-[#b8487a] transform -rotate-8 transition-transform group-hover:scale-110"></span>
-              <span className="absolute left-[3px] top-[19px] w-[16px] h-[20px] rounded-[0%_70%_70%_70%] bg-[#4a7c3f] transform rotate-28 transition-transform group-hover:scale-110"></span>
-              <span className="absolute left-[21px] top-[19px] w-[16px] h-[20px] rounded-[70%_0%_70%_70%] bg-[#4a7c3f] transform -rotate-28 transition-transform group-hover:scale-110"></span>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Megafardos del Norte"
+              width={40}
+              height={40}
+              className="object-contain transition-transform group-hover:scale-105"
+            />
             <div className="flex flex-col leading-none">
               <span className="font-bold text-[16px] tracking-wider text-[#2D5A25]">MEGAFARDOS</span>
               <span className="font-medium text-[11px] tracking-[0.2em] text-[#8B5E3C]">DEL NORTE</span>
@@ -528,7 +530,7 @@ export default function Landing2() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-[#2D5A25]">📍</span>
-                <span className="text-sm font-semibold text-gray-700">Centro Operativo \u201CLa Mora\u201D, Norte Argentino</span>
+                <span className="text-sm font-semibold text-gray-700">Jes\u00FAs Mar\u00EDa, C\u00F3rdoba, Argentina</span>
               </div>
             </div>
 
@@ -673,11 +675,13 @@ export default function Landing2() {
           
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-8 h-8 flex-shrink-0">
-                <span className="absolute left-[10px] top-[2px] w-[10px] h-[14px] rounded-[70%_70%_70%_0%] bg-[#b8487a] transform -rotate-8"></span>
-                <span className="absolute left-[2px] top-[15px] w-[12px] h-[16px] rounded-[0%_70%_70%_70%] bg-[#4a7c3f] transform rotate-28"></span>
-                <span className="absolute left-[17px] top-[15px] w-[12px] h-[16px] rounded-[70%_0%_70%_70%] bg-[#4a7c3f] transform -rotate-28"></span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Megafardos del Norte"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-bold text-sm tracking-wider text-white">MEGAFARDOS</span>
                 <span className="font-medium text-[9px] tracking-[0.2em] text-[#8B5E3C]">DEL NORTE</span>
