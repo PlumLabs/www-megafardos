@@ -211,13 +211,12 @@ export default function Landing3() {
           borderBottom: scrolled ? '1px solid rgba(28,31,26,0.1)' : '1px solid transparent',
         }}
       >
-        <a href="#hero" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1, textDecoration: 'none' }}>
-          <span className="serif" style={{ fontSize: '1.05rem', color: 'var(--ink)', letterSpacing: '0.03em' }}>
-            Megafardos
-          </span>
-          <span style={{ fontSize: '0.55rem', letterSpacing: '0.25em', color: 'var(--green)', textTransform: 'uppercase' }}>
-            del Norte
-          </span>
+        <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
+          <Image src="/logo.png" alt="Megafardos del Norte" width={36} height={36} className="object-contain" />
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+            <span className="serif" style={{ fontSize: '1.05rem', color: 'var(--ink)', letterSpacing: '0.03em' }}>Megafardos</span>
+            <span style={{ fontSize: '0.55rem', letterSpacing: '0.25em', color: 'var(--green)', textTransform: 'uppercase' }}>del Norte</span>
+          </div>
         </a>
 
         <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
@@ -766,9 +765,12 @@ export default function Landing3() {
       {/* ── FOOTER ─────────────────────────────────────────────── */}
       <footer style={{ background: 'var(--bg-mid)', borderTop: '1px solid var(--border)', padding: '4rem 2rem' }}>
         <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem' }}>
-          <div>
-            <span className="serif" style={{ fontSize: '1rem', color: 'var(--ink)', display: 'block', marginBottom: '0.25rem' }}>Megafardos del Norte</span>
-            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>Jesús María · Córdoba · Argentina</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <Image src="/logo.png" alt="Megafardos del Norte" width={32} height={32} className="object-contain" />
+            <div>
+              <span className="serif" style={{ fontSize: '1rem', color: 'var(--ink)', display: 'block', marginBottom: '0.25rem' }}>Megafardos del Norte</span>
+              <span style={{ fontSize: '0.65rem', color: 'var(--muted)', letterSpacing: '0.1em' }}>Jesús María · Córdoba · Argentina</span>
+            </div>
           </div>
           <div style={{ display: 'flex', gap: '2rem' }}>
             {['Productos', 'Servicios', 'Nosotros', 'Contacto'].map(link => (
