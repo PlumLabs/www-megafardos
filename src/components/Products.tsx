@@ -3,72 +3,66 @@ import AnimatedSection from './AnimatedSection'
 
 const products = [
   {
-    title: 'Megafardos',
-    subtitle: 'Mercado interno',
-    description: 'Alfalfa de primera calidad en megafardos. Producida integramente con materia prima propia.',
+    title: 'Fardos comprimidos de alfalfa',
+    subtitle: 'Formato exportación',
+    description: 'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
     image: '/images/fardos.png',
   },
   {
-    title: 'Megafardos de Exportación',
-    subtitle: 'Mercado internacional',
-    description: 'Prensados con maquinaria de última generación. Cumplen con estándares internacionales. 40% materia prima de terceros seleccionados.',
-    image: '/images/cubos.png',
-  },
-  {
-    title: 'Pellets de Alfalfa',
-    subtitle: '100% Alfalfa',
-    description: 'Presentaciones: bolsas de 25 kg, Big Bag y granel. Certificados SENASA y BPM. Ideales para feedlots y tambos.',
+    title: 'Pellets de alfalfa',
+    subtitle: 'Alta densidad',
+    description: 'Producto obtenido mediante compresión de alfalfa deshidratada, ideal para una alimentación práctica y uniforme.',
     image: '/images/pellets.png',
   },
   {
-    title: 'Alfalfa Deshidratada',
-    subtitle: 'Valor agregado',
-    description: 'Alfalfa deshidratada de alta calidad. Procesada con tecnología de punta para preservar sus propiedades nutricionales.',
+    title: 'Cubos de alfalfa',
+    subtitle: 'Fácil manejo',
+    description: 'Formato de alta densidad, fácil manipulación y excelente aprovechamiento nutricional.',
+    image: '/images/cubos.png',
+  },
+  {
+    title: 'Alfalfa deshidratada',
+    subtitle: 'Materia prima',
+    description: 'Materia prima de calidad, procesada para conservar sus propiedades y valor nutricional.',
     image: '/images/deshidratada.png',
   },
 ]
 
 export default function Products() {
   return (
-    <section id="productos" className="py-20 md:py-32 bg-white">
+    <section id="productos" className="py-20 md:py-32 bg-brand-green/5">
       <div className="max-w-7xl mx-auto px-6">
         <AnimatedSection>
-          <div className="max-w-xl">
-            <span className="text-xs font-semibold text-brand-gold uppercase tracking-widest">
-              Productos
+          <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+            <span className="text-xs font-semibold text-brand-gold uppercase tracking-[0.22em]">
+              Catálogo
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-green mt-4 leading-tight">
-              Calidad en cada
-              <br />
-              <span className="text-brand-gold">presentación</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-green mt-4 uppercase tracking-tight leading-tight">
+              Nuestros productos
             </h2>
-            <div className="w-16 h-0.5 bg-brand-gold mt-6" />
-            <p className="text-brand-green/70 leading-relaxed mt-6">
-              Ofrecemos alfalfa en distintos formatos para adaptarnos a las necesidades
-              de cada cliente, manteniendo la misma calidad en todos nuestros productos.
-            </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, i) => (
-            <AnimatedSection key={product.title} delay={i * 100}>
-              <div className="group bg-white rounded-2xl overflow-hidden border border-brand-green/5 hover:border-brand-green/15 transition-all duration-300 hover:shadow-xl hover:shadow-brand-green/5">
-                <div className="relative h-48 overflow-hidden">
+            <AnimatedSection key={product.title} delay={i * 100} className="h-full">
+              <div className="group h-full flex flex-col bg-brand-cream shadow-sm hover:shadow-lg hover:shadow-brand-green/5 transition-shadow duration-300">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                </div>
-                <div className="p-6 md:p-8">
-                  <span className="text-xs font-semibold text-brand-gold uppercase tracking-wider">
+                  <span className="absolute left-3.5 top-3.5 font-mono text-[10.5px] uppercase tracking-wider text-brand-cream bg-brand-green px-2 py-1">
                     {product.subtitle}
                   </span>
-                  <h3 className="text-xl font-bold text-brand-green mt-1">{product.title}</h3>
-                  <p className="text-brand-green/60 text-sm leading-relaxed mt-3">
+                </div>
+                <div className="flex flex-col gap-3.5 flex-1 p-6 md:p-7">
+                  <h3 className="text-base font-bold text-brand-green uppercase tracking-tight leading-snug">
+                    {product.title}
+                  </h3>
+                  <p className="text-sm text-brand-green/70 leading-relaxed flex-1">
                     {product.description}
                   </p>
                 </div>
