@@ -17,15 +17,14 @@ export default function About() {
             </h2>
             <div className="w-16 h-0.5 bg-brand-gold mt-6" />
             <p className="text-brand-green/70 leading-relaxed mt-6">
-              Megafardos del Norte es una empresa familiar que comenzó su actividad
-              agropecuaria en 2013 con 50 hectáreas de alfalfa. Desde entonces, hemos
-              crecido hasta trabajar más de <strong>3.000 hectáreas</strong> de soja,
-              maíz y trigo, y <strong>1.000 hectáreas</strong> de alfalfa.
+              Somos una empresa familiar que comenzó su actividad agropecuaria en 2013
+              con 50 hectáreas de alfalfa. Desde entonces, hemos crecido hasta trabajar
+              más de <strong>4.000 hectáreas</strong> de soja, maíz, trigo y alfalfa.
             </p>
             <p className="text-brand-green/70 leading-relaxed mt-4">
-              Todo el proceso productivo lo realizamos con maquinaria propia de última
-              generación. Invertimos en tecnología para garantizar la mejor calidad
-              en cada etapa, desde la siembra hasta la entrega.
+              Trabajamos con maquinaria propia con tecnología de última generación.
+              Integramos todas las etapas del proceso productivo, desde la siembra y la
+              cosecha hasta la elaboración de megafardos y pellets.
             </p>
           </AnimatedSection>
 
@@ -45,8 +44,9 @@ export default function About() {
               <div className="space-y-6">
                 {[
                   { year: '2013', text: 'Inicio con 50 hectáreas de alfalfa' },
+                  { year: '2015', text: 'Incorporación de equipos propios para trilla' },
                   { year: '2022', text: 'Primera exportación de megafardos' },
-                  { year: '2023', text: 'Prensa importada desde España para exportación' },
+                  { year: '2023', text: 'Importación de prensa para producción de megafardos de exportación' },
                   { year: '2026', text: 'Instalación de planta pelletizadora' },
                 ].map((item) => (
                   <div key={item.year} className="flex gap-4">

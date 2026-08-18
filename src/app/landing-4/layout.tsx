@@ -1,4 +1,5 @@
 import WhatsAppButton from '@/components/WhatsAppButton'
+import InstagramButton from '@/components/InstagramButton'
 
 export default function Landing4Layout({
   children,
@@ -8,6 +9,7 @@ export default function Landing4Layout({
   return (
     <>
       {children}
+      <InstagramButton />
       <WhatsAppButton />
     </>
   )

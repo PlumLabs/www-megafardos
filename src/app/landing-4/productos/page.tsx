@@ -20,13 +20,13 @@ const navLinks = [
 
 const products = [
   {
-    title: 'Fardos comprimidos de alfalfa',
+    title: 'Megafardos prensados',
     subtitle: 'Formato exportación',
     description:
-      'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad. Formato pensado para optimizar la logística de exportación.',
+      'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
     image: '/images/fardos.png',
     features: [
-      'Selección de materia prima',
+      'Materia prima seleccionada',
       'Alta densidad de compactación',
       'Apto para exportación',
       'Conservación de calidad',
@@ -40,35 +40,35 @@ const products = [
     image: '/images/pellets.png',
     features: [
       'Alimentación práctica y uniforme',
-      'Certificación SENASA y BPM',
       'Bolsa 25 kg · Big Bag · Granel',
-      'Producción propia',
+      '8 mm x 40 mm',
+      'Mercado interno y exportación',
     ],
   },
   {
-    title: 'Cubos de alfalfa',
+    title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
     description:
-      'Formato de alta densidad, fácil manipulación y excelente aprovechamiento nutricional. Ideal para feedlots y tambos que buscan practicidad.',
+      'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
     image: '/images/cubos.png',
     features: [
-      'Alta densidad',
+      '20 a 23 kg',
+      '60x25x35 cm',
       'Fácil manipulación',
-      'Excelente aprovechamiento nutricional',
       'Ideal para feedlots y tambos',
     ],
   },
   {
-    title: 'Alfalfa deshidratada',
-    subtitle: 'Materia prima',
+    title: 'Megafardos de alfalfa',
+    subtitle: 'Mercado interno',
     description:
-      'Materia prima de calidad, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
+      'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
     image: '/images/deshidratada.png',
     features: [
-      'Conserva propiedades nutricionales',
-      'Humedad controlada',
+      '0.90x1.20x2.4 m',
+      'Humedad controlada <18%',
+      '550 a 750 kg',
       'Calidad constante todo el año',
-      'Procesada con tecnología de punta',
     ],
   },
 ]
@@ -87,7 +87,7 @@ export default function ProductosPage() {
           eyebrow="Productos"
           title="Nuestros"
           highlight="productos"
-          description="Ofrecemos alfalfa en distintos formatos para adaptarnos a las necesidades de cada cliente, manteniendo la misma calidad en todos nuestros productos."
+          description="Ofrecemos alfalfa de calidad en distintos formatos para adaptarnos a las necesidades de cada cliente. Planta habilitada por SENASA y bajo estándares de Buenas Prácticas de Manufactura (BPM)."
           image="/images/fardos.png"
         />
 
@@ -146,7 +146,7 @@ export default function ProductosPage() {
                       href="/landing-4#contacto"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
                     >
-                      Consultar por {product.title}
+                      Consultar por este producto
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>

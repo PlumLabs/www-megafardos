@@ -18,9 +18,17 @@ export default function SobreNosotros() {
             </h2>
             <div className="w-16 h-0.5 bg-brand-gold mt-6" />
             <p className="text-brand-green/70 leading-relaxed mt-6 max-w-lg">
-              Somos una empresa argentina dedicada a la producción, industrialización y
-              comercialización de alfalfa. Trabajamos para ofrecer alimento animal de
-              calidad premium, con foco en mercados nacionales e internacionales.
+              Somos una empresa ubicada en Jesús María, Córdoba, especializada en la
+              producción, procesamiento y comercialización de alfalfa de alta calidad.
+            </p>
+            <p className="text-brand-green/70 leading-relaxed mt-4 max-w-lg">
+              Aplicamos tecnología, maquinaria propia y controles de calidad en cada
+              etapa, para responder a las exigencias de mercados nacionales e
+              internacionales.
+            </p>
+            <p className="text-brand-green/70 leading-relaxed mt-4 max-w-lg">
+              Además, brindamos servicios de siembra, cosecha y pulverización con
+              equipamiento de última generación.
             </p>
             <Link
               href="#productos"
@@ -37,7 +45,7 @@ export default function SobreNosotros() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/equipo2.png"
-                alt="Equipo de MegaFardos del Norte"
+                alt="Planta MegaFardos del Norte"
                 fill
                 className="object-cover"
               />
