@@ -22,9 +22,8 @@ const services = [
   {
     title: 'Siembra',
     description:
-      'Servicio de siembra para soja, maíz, trigo y alfalfa con maquinaria de última generación. Sembradoras equipadas con dosificación variable y guiado satelital GPS para máxima precisión.',
+      'Servicio de siembra para soja, maíz, trigo y alfalfa con maquinaria de última generación.',
     image: '/images/hero-2.png',
-    features: ['Dosificación variable', 'Guiado satelital GPS', 'Soja · Maíz · Trigo · Alfalfa'],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M16 4v12M12 8l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -38,7 +37,6 @@ const services = [
     description:
       'Cosecha de soja, maíz, trigo y alfalfa con equipos de trilla y enfardado de última generación. Control total del proceso productivo para garantizar la mejor calidad del grano y el forraje.',
     image: '/images/equipo2.png',
-    features: ['Equipos de trilla propios', 'Enfardado de última generación', 'Control total del proceso'],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M24 20c-2 0-4-1-5-3-1-2-1-5-1-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -52,7 +50,6 @@ const services = [
     description:
       'Pulverización terrestre para todo tipo de cultivos. Aplicación precisa y eficiente con equipos modernos que optimizan el uso de insumos y cuidan el rendimiento de cada lote.',
     image: '/images/riego.png',
-    features: ['Aplicación de precisión', 'Equipos modernos', 'Optimización de insumos'],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M10 12h12v4H10z" stroke="currentColor" strokeWidth="1.5" />
@@ -66,7 +63,6 @@ const services = [
     description:
       'Logística integral para mercado interno y exportación. Coordinamos el prensado, la carga en contenedores y el transporte cumpliendo con los estándares internacionales de calidad.',
     image: '/images/logistica.png',
-    features: ['Carga en contenedores', 'Estándares internacionales', 'Mercado interno y externo'],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M4 10h14v10H4z" stroke="currentColor" strokeWidth="1.5" />
@@ -126,16 +122,6 @@ export default function ServiciosPage() {
                     <p className="text-brand-green/70 leading-relaxed mt-5">
                       {service.description}
                     </p>
-                    <div className="flex flex-wrap gap-3 mt-6">
-                      {service.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs font-medium text-brand-green bg-brand-green/5 border border-brand-green/10 px-3 py-1.5 rounded-full"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
                     <Link
                       href="/landing-4#contacto"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"

@@ -29,7 +29,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-          Tecnología, calidad y compromiso en cada etapa del proceso productivo.
+          Tecnología, excelencia y compromiso en cada etapa del proceso productivo.
           </p>
 
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
@@ -54,9 +54,9 @@ export default function Hero() {
         {/* Stats teaser */}
         <div className="grid grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24 pt-12 border-t border-white/10 max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
           {[
-            { value: '1000+', label: 'hectáreas de alfalfa' },
-            { value: '8000', label: 'm² de galpones' },
-            { value: '2013', label: 'años de experiencia' },
+            { value: '+1000', label: 'hectáreas de alfalfa' },
+            { value: '+8000', label: 'm² de galpones' },
+            { value: '+13', label: 'años de experiencia' },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>

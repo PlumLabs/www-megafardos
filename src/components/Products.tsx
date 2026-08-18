@@ -3,7 +3,7 @@ import AnimatedSection from './AnimatedSection'
 
 const products = [
   {
-    title: 'Fardos comprimidos de alfalfa',
+    title: 'Megafardos prensados',
     subtitle: 'Formato exportación',
     description: 'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
     image: '/images/fardos.png',
@@ -15,15 +15,15 @@ const products = [
     image: '/images/pellets.png',
   },
   {
-    title: 'Cubos de alfalfa',
+    title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
-    description: 'Formato de alta densidad, fácil manipulación y excelente aprovechamiento nutricional.',
+    description: 'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
     image: '/images/cubos.png',
   },
   {
-    title: 'Alfalfa deshidratada',
-    subtitle: 'Materia prima',
-    description: 'Materia prima de calidad, procesada para conservar sus propiedades y valor nutricional.',
+    title: 'Megafardos de alfalfa',
+    subtitle: 'Mercado interno',
+    description: 'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante todo el año.',
     image: '/images/deshidratada.png',
   },
 ]

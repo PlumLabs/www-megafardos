@@ -8,7 +8,7 @@ const certifications = [
   },
   {
     name: 'BPM',
-    description: 'Buenas Prácticas de Manufactura en nuestra planta de pellets.',
+    description: 'Buenas Prácticas de Manufactura en nuestra planta.',
   },
 ]
 
@@ -37,7 +37,6 @@ export default function Contact() {
             <div className="w-16 h-0.5 bg-brand-gold mt-6" />
             <p className="text-brand-green/70 leading-relaxed mt-6">
               Trabajamos para cumplir con los estándares más exigentes del mercado.
-              Nuestro objetivo es obtener la certificación ISO 9001.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
@@ -59,8 +58,7 @@ export default function Contact() {
             <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-brand-green/5 border border-brand-green/5">
               <h3 className="text-2xl font-bold text-brand-green">Contacto</h3>
               <p className="text-brand-green/60 text-sm mt-2 leading-relaxed">
-                Comunicate con nosotros por WhatsApp — nuestro principal canal
-                de comunicación.
+                Comunicate con nosotros por WhatsApp.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -72,7 +70,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-xs text-brand-green/60">WhatsApp</div>
-                    <div className="font-semibold text-brand-green text-sm">+54 9 11 5555-5555</div>
+                    <div className="font-semibold text-brand-green text-sm">+54 9 3525 48-0178</div>
                   </div>
                 </div>
 
@@ -89,9 +87,18 @@ export default function Contact() {
                 </div>
               </div>
 
-              <p className="text-xs text-brand-green/40 mt-6 leading-relaxed">
-                También formamos parte del Cluster de Alfalfa, participando desde su fundación.
-              </p>
+              <a
+                href="https://www.google.com/maps?q=Megafardos+del+Norte,+Zona+rural+camino+a+nintes,+X5220+Jesus+Mar%C3%ADa,+C%C3%B3rdoba"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-brand-green/50 hover:text-brand-gold transition-colors mt-6"
+              >
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Jesús María, Córdoba
+              </a>
             </div>
           </AnimatedSection>
         </div>

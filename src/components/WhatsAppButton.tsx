@@ -1,6 +1,6 @@
 // Botón flotante de WhatsApp (visible en todo el sitio de landing-4).
-// Cambiá WHATSAPP_NUMBER por el número real (solo dígitos, con código de país).
-const WHATSAPP_NUMBER = '5491155555555'
+// Número real (solo dígitos, con código de país).
+const WHATSAPP_NUMBER = '5493525480178'
 const WHATSAPP_MESSAGE = 'Hola! Quería hacerles una consulta sobre sus productos de alfalfa.'
 
 export default function WhatsAppButton() {
