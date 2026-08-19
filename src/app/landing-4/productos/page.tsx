@@ -14,9 +14,15 @@ export const metadata = {
 const navLinks = [
   { label: 'Nosotros', href: '/landing-4#nosotros' },
   { label: 'Productos', href: '/landing-4/productos' },
-  { label: 'Servicios', href: '/landing-4/servicios' },
-  { label: 'Contacto', href: '/landing-4#contacto' },
+  { label: 'Servicios', href: '/landing-4/servicios' }
 ]
+
+// WhatsApp de contacto (solo dígitos, con código de país).
+const WHATSAPP_NUMBER = '5493525480178'
+const waHref = (product: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola! Me interesa el producto "${product}". ¿Me pasan más información y precio?`,
+  )}`
 
 const products = [
   {
@@ -50,7 +56,7 @@ const products = [
     subtitle: 'Fácil manejo',
     description:
       'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/cubos.png',
+    image: '/images/fardos_galpon_16_9.webp',
     features: [
       '20 a 23 kg',
       '60x25x35 cm',
@@ -63,7 +69,7 @@ const products = [
     subtitle: 'Mercado interno',
     description:
       'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
-    image: '/images/deshidratada.png',
+    image: '/images/fardo_alfalfa_16_9.webp',
     features: [
       '0.90x1.20x2.4 m',
       'Humedad controlada <18%',
@@ -86,6 +92,7 @@ export default function ProductosPage() {
         <PageHero
           eyebrow="Productos"
           title="Nuestros"
+          breadcrumb="Nuestros Productos"
           highlight="productos"
           description="Ofrecemos alfalfa de calidad en distintos formatos para adaptarnos a las necesidades de cada cliente. Planta habilitada por SENASA y bajo estándares de Buenas Prácticas de Manufactura (BPM)."
           image="/images/fardos.png"
@@ -142,15 +149,17 @@ export default function ProductosPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      href="/landing-4#contacto"
+                    <a
+                      href={waHref(product.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
                     >
                       Consultar por este producto
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>

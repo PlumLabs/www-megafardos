@@ -14,16 +14,22 @@ export const metadata = {
 const navLinks = [
   { label: 'Nosotros', href: '/landing-4#nosotros' },
   { label: 'Productos', href: '/landing-4/productos' },
-  { label: 'Servicios', href: '/landing-4/servicios' },
-  { label: 'Contacto', href: '/landing-4#contacto' },
+  { label: 'Servicios', href: '/landing-4/servicios' }
 ]
+
+// WhatsApp de contacto (solo dígitos, con código de país).
+const WHATSAPP_NUMBER = '5493525480178'
+const waHref = (service: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola! Me interesa el servicio de ${service}. ¿Me pasan más información?`,
+  )}`
 
 const services = [
   {
     title: 'Siembra',
     description:
       'Servicio de siembra para soja, maíz, trigo y alfalfa con maquinaria de última generación.',
-    image: '/images/hero-2.png',
+    image: '/images/siembra.webp',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M16 4v12M12 8l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -36,7 +42,7 @@ const services = [
     title: 'Cosecha',
     description:
       'Cosecha de soja, maíz, trigo y alfalfa con equipos de trilla y enfardado de última generación. Control total del proceso productivo para garantizar la mejor calidad del grano y el forraje.',
-    image: '/images/equipo2.png',
+    image: '/images/hero-2.png',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M24 20c-2 0-4-1-5-3-1-2-1-5-1-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -49,7 +55,7 @@ const services = [
     title: 'Pulverización',
     description:
       'Pulverización terrestre para todo tipo de cultivos. Aplicación precisa y eficiente con equipos modernos que optimizan el uso de insumos y cuidan el rendimiento de cada lote.',
-    image: '/images/riego.png',
+    image: '/images/pulverizacion.webp',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M10 12h12v4H10z" stroke="currentColor" strokeWidth="1.5" />
@@ -62,7 +68,7 @@ const services = [
     title: 'Logística y exportación',
     description:
       'Logística integral para mercado interno y exportación. Coordinamos el prensado, la carga en contenedores y el transporte cumpliendo con los estándares internacionales de calidad.',
-    image: '/images/logistica.png',
+    image: '/images/logistica.webp',
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
         <path d="M4 10h14v10H4z" stroke="currentColor" strokeWidth="1.5" />
@@ -88,6 +94,7 @@ export default function ServiciosPage() {
           eyebrow="Servicios"
           title="Servicios al"
           highlight="campo"
+          breadcrumb="Servicios al campo"
           description="Además de producir alfalfa de primera calidad, ponemos nuestra experiencia y maquinaria de última generación a disposición de otros productores."
           image="/images/equipo2.png"
         />
@@ -122,15 +129,17 @@ export default function ServiciosPage() {
                     <p className="text-brand-green/70 leading-relaxed mt-5">
                       {service.description}
                     </p>
-                    <Link
-                      href="/landing-4#contacto"
+                    <a
+                      href={waHref(service.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
                     >
                       Consultar por {service.title}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>

@@ -17,15 +17,11 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-16 relative z-10 w-full">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-xs font-medium text-white/80 mb-6 opacity-0 animate-fade-in backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold-light animate-pulse" />
-            Productores de alfalfa desde 2013
-          </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            Megafardos
+            Alfalfa
             <br />
-            <span className="text-brand-gold-light">del Norte</span>
+            <span className="text-brand-gold-light">de calidad </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>

@@ -51,7 +51,7 @@ export default function ComercioInternacional() {
           <AnimatedSection type="reveal-right" delay={200}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/comercio.png"
+                src="/images/megafardos_carga_alfalfa_verde.webp"
                 alt="Flota y logística de exportación"
                 fill
                 className="object-cover"

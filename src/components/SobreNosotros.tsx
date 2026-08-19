@@ -44,7 +44,7 @@ export default function SobreNosotros() {
           <AnimatedSection type="reveal-right" delay={200}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/equipo2.png"
+                src="/images/megafardo-campo.webp"
                 alt="Planta MegaFardos del Norte"
                 fill
                 className="object-cover"
