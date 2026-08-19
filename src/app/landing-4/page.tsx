@@ -13,7 +13,6 @@ const navLinks = [
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Productos', href: '/landing-4/productos' },
   { label: 'Servicios', href: '/landing-4/servicios' },
-  { label: 'Contacto', href: '#contacto' },
 ]
 
 export default function Landing4() {

@@ -18,13 +18,13 @@ const products = [
     title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
     description: 'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/cubos.png',
+    image: '/images/producto_fardos_galpon.webp',
   },
   {
     title: 'Megafardos de alfalfa',
     subtitle: 'Mercado interno',
     description: 'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante todo el año.',
-    image: '/images/deshidratada.png',
+    image: '/images/producto_fardo_alfalfa.webp',
   },
 ]
 

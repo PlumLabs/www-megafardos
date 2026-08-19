@@ -6,6 +6,7 @@ export default function PageHero({
   title,
   highlight,
   description,
+  breadcrumb,
   image = '/images/hero.png',
 }: {
   eyebrow: string
@@ -13,6 +14,7 @@ export default function PageHero({
   highlight?: string
   description?: string
   image?: string
+  breadcrumb?: string
 }) {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
@@ -25,7 +27,7 @@ export default function PageHero({
             Inicio
           </Link>
           <span>/</span>
-          <span className="text-white/90">{title}</span>
+          <span className="text-white/90">{breadcrumb}</span>
         </nav>
 
         <span className="text-xs font-semibold text-brand-gold-light uppercase tracking-widest">

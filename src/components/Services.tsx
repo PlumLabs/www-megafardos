@@ -64,16 +64,6 @@ export default function Services() {
                 className="object-cover"
               />
             </div>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {['Soja', 'Maíz', 'Trigo', 'Alfalfa'].map((crop) => (
-                <span
-                  key={crop}
-                  className="text-xs font-medium text-brand-green bg-brand-green/5 border border-brand-green/10 px-3 py-1.5 rounded-full"
-                >
-                  {crop}
-                </span>
-              ))}
-            </div>
           </AnimatedSection>
 
           <div className="space-y-4">

@@ -18,6 +18,13 @@ const navLinks = [
   { label: 'Contacto', href: '/landing-4#contacto' },
 ]
 
+// WhatsApp de contacto (solo dígitos, con código de país).
+const WHATSAPP_NUMBER = '5493525480178'
+const waHref = (service: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola! Quería hacerles una consulta sobre el servicio de ${service}.`,
+  )}`
+
 const services = [
   {
     title: 'Siembra',
@@ -122,15 +129,17 @@ export default function ServiciosPage() {
                     <p className="text-brand-green/70 leading-relaxed mt-5">
                       {service.description}
                     </p>
-                    <Link
-                      href="/landing-4#contacto"
+                    <a
+                      href={waHref(service.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
                     >
                       Consultar por {service.title}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>
