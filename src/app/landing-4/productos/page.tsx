@@ -14,15 +14,14 @@ export const metadata = {
 const navLinks = [
   { label: 'Nosotros', href: '/landing-4#nosotros' },
   { label: 'Productos', href: '/landing-4/productos' },
-  { label: 'Servicios', href: '/landing-4/servicios' },
-  { label: 'Contacto', href: '/landing-4#contacto' },
+  { label: 'Servicios', href: '/landing-4/servicios' }
 ]
 
 // WhatsApp de contacto (solo dígitos, con código de país).
 const WHATSAPP_NUMBER = '5493525480178'
 const waHref = (product: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola! Quería hacerles una consulta sobre ${product}.`,
+    `Hola! Me interesa el producto "${product}". ¿Me pasan más información y precio?`,
   )}`
 
 const products = [
@@ -57,7 +56,7 @@ const products = [
     subtitle: 'Fácil manejo',
     description:
       'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/cubos.png',
+    image: '/images/fardos_galpon_16_9.webp',
     features: [
       '20 a 23 kg',
       '60x25x35 cm',
@@ -70,7 +69,7 @@ const products = [
     subtitle: 'Mercado interno',
     description:
       'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
-    image: '/images/deshidratada.png',
+    image: '/images/fardo_alfalfa_16_9.webp',
     features: [
       '0.90x1.20x2.4 m',
       'Humedad controlada <18%',
