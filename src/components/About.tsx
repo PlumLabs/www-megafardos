@@ -31,7 +31,7 @@ export default function About() {
           <AnimatedSection type="reveal-right" delay={200} className="space-y-6">
             <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/equipo1.png"
+                src="/images/megafardos_almacen_web.webp"
                 alt="Equipo de Megafardos del Norte"
                 fill
                 className="object-cover"
