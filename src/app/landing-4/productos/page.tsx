@@ -30,7 +30,7 @@ const products = [
     subtitle: 'Formato exportación',
     description:
       'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
-    image: '/images/fardos.png',
+    image: '/images/prensado-product.webp',
     features: [
       'Materia prima seleccionada',
       'Alta densidad de compactación',
@@ -56,7 +56,7 @@ const products = [
     subtitle: 'Fácil manejo',
     description:
       'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/fardos_galpon_16_9.webp',
+    image: '/images/microfardos-product.webp',
     features: [
       '20 a 23 kg',
       '60x25x35 cm',
@@ -69,7 +69,7 @@ const products = [
     subtitle: 'Mercado interno',
     description:
       'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
-    image: '/images/fardo_alfalfa_16_9.webp',
+    image: '/images/deshidratada-product.webp',
     features: [
       '0.90x1.20x2.4 m',
       'Humedad controlada <18%',
