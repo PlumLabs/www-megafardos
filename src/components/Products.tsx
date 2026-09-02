@@ -6,7 +6,7 @@ const products = [
     title: 'Megafardos prensados',
     subtitle: 'Formato exportación',
     description: 'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
-    image: '/images/prensado-product.webp',
+    image: '/images/microfardos-product.webp',
   },
   {
     title: 'Pellets de alfalfa',
@@ -18,7 +18,7 @@ const products = [
     title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
     description: 'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/microfardos-product.webp',
+    image: '/images/prensado-product.webp',
   },
   {
     title: 'Megafardos de alfalfa',

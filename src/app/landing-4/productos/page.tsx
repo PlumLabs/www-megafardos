@@ -30,7 +30,7 @@ const products = [
     subtitle: 'Formato exportación',
     description:
       'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
-    image: '/images/prensado-product.webp',
+    image: '/images/microfardos-product.webp',
     features: [
       'Materia prima seleccionada',
       'Alta densidad de compactación',
@@ -56,7 +56,7 @@ const products = [
     subtitle: 'Fácil manejo',
     description:
       'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/microfardos-product.webp',
+    image: '/images/prensado-product.webp',
     features: [
       '20 a 23 kg',
       '60x25x35 cm',
