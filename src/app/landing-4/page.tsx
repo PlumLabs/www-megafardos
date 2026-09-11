@@ -23,7 +23,7 @@ export default function Landing4() {
         <Hero />
         <SobreNosotros />
         <About />
-        <Stats />
+        {/* <Stats /> */}
         <Products />
         <Services />
         <ComercioInternacional />
