@@ -47,15 +47,10 @@ export default function Header({
           <Image
             src="/logo.png"
             alt="Megafardos del Norte"
-            width={40}
-            height={40}
+            width={160}
+            height={160}
             className="object-contain"
           />
-          <span className={`font-semibold text-sm md:text-base transition-colors ${
-            solid ? 'text-brand-green' : 'text-white'
-          }`}>
-            Megafardos del Norte
-          </span>
         </Link>
 
         {/* Nav desktop */}
