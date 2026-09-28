@@ -5,6 +5,7 @@ import InstagramButton from '@/components/InstagramButton'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import StructuredData from '@/components/StructuredData'
 import { SITE, SITE_URL } from '@/lib/site'
+import { MAINTENANCE_MODE } from '@/lib/maintenance'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,8 +58,13 @@ export default function RootLayout({
       <body>
         <StructuredData />
         {children}
-        <InstagramButton />
-        <WhatsAppButton />
+        {/* The construction page already has its own contact links. */}
+        {!MAINTENANCE_MODE && (
+          <>
+            <InstagramButton />
+            <WhatsAppButton />
+          </>
+        )}
         <GoogleAnalytics />
       </body>
     </html>

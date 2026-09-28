@@ -6,6 +6,14 @@
 
 :root {
   --radius: 0.625rem;
+
+  /* "Under construction" page palette */
+  --green-light: #6ba85e;
+  --green-dark: #2d5a25;
+  --gold: #d4a017;
+  --gold-light: #e8b830;
+  --earth: #8B5E3C;
+  --sky: #e8f0e4;
 }
 
 body {
@@ -26,6 +34,23 @@ body {
 ::selection {
   background: #D4A017;
   color: #1B4332;
+}
+
+.alfalfa-bg {
+  background: linear-gradient(180deg, var(--sky) 0%, #d4e8c2 40%, var(--green-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.alfalfa-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--green-dark), transparent);
+  opacity: 0.15;
 }
 
 .alfalfa-pattern {
