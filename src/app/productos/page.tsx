@@ -27,6 +27,7 @@ const waHref = (product: string) =>
 
 const products = [
   {
+    slug: 'megafardos-prensados',
     title: 'Megafardos prensados',
     subtitle: 'Formato exportación',
     description:
@@ -40,6 +41,7 @@ const products = [
     ],
   },
   {
+    slug: 'pellets-de-alfalfa',
     title: 'Pellets de alfalfa',
     subtitle: 'Alta densidad',
     description:
@@ -53,6 +55,7 @@ const products = [
     ],
   },
   {
+    slug: 'microfardos-de-alfalfa',
     title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
     description:
@@ -66,6 +69,7 @@ const products = [
     ],
   },
   {
+    slug: 'megafardos-de-alfalfa',
     title: 'Megafardos de alfalfa',
     subtitle: 'Mercado interno',
     description:
@@ -104,7 +108,8 @@ export default function ProductosPage() {
             {products.map((product, i) => (
               <AnimatedSection key={product.title}>
                 <div
-                  className={`grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
+                  id={product.slug}
+                  className={`scroll-mt-28 grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
                     i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''
                   }`}
                 >

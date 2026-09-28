@@ -1,8 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import AnimatedSection from './AnimatedSection'
 
 const services = [
   {
+    slug: 'siembra',
     title: 'Siembra',
     description: 'Servicio de siembra para soja, maíz, trigo y alfalfa. Realizado con maquinaria de última generación.',
     icon: (
@@ -14,6 +16,7 @@ const services = [
     ),
   },
   {
+    slug: 'cosecha',
     title: 'Cosecha',
     description: 'Cosecha de soja, maíz, trigo y alfalfa. Contamos con equipos de trilla y enfardado de última generación.',
     icon: (
@@ -25,6 +28,7 @@ const services = [
     ),
   },
   {
+    slug: 'pulverizacion',
     title: 'Pulverización',
     description: 'Pulverización para todo tipo de cultivos. Aplicación precisa y eficiente con equipos modernos.',
     icon: (
@@ -69,7 +73,10 @@ export default function Services() {
           <div className="space-y-4">
             {services.map((service, i) => (
               <AnimatedSection key={service.title} delay={i * 100}>
-                <div className="bg-white rounded-xl p-6 border border-brand-green/5 hover:border-brand-green/15 transition-all hover:shadow-md">
+                <Link
+                  href={`/servicios#${service.slug}`}
+                  className="block bg-white rounded-xl p-6 border border-brand-green/5 hover:border-brand-green/15 transition-all hover:shadow-md"
+                >
                   <div className="flex gap-4 items-start">
                     <div className="text-brand-green-light mt-0.5 shrink-0">
                       {service.icon}
@@ -81,7 +88,7 @@ export default function Services() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </Link>
               </AnimatedSection>
             ))}
           </div>

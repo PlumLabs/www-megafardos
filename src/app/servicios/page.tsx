@@ -27,6 +27,7 @@ const waHref = (service: string) =>
 
 const services = [
   {
+    slug: 'siembra',
     title: 'Siembra',
     description:
       'Servicio de siembra para soja, maíz, trigo y alfalfa con maquinaria de última generación.',
@@ -40,6 +41,7 @@ const services = [
     ),
   },
   {
+    slug: 'cosecha',
     title: 'Cosecha',
     description:
       'Cosecha de soja, maíz, trigo y alfalfa con equipos de trilla y enfardado de última generación. Control total del proceso productivo para garantizar la mejor calidad del grano y el forraje.',
@@ -53,6 +55,7 @@ const services = [
     ),
   },
   {
+    slug: 'pulverizacion',
     title: 'Pulverización',
     description:
       'Pulverización terrestre para todo tipo de cultivos. Aplicación precisa y eficiente con equipos modernos que optimizan el uso de insumos y cuidan el rendimiento de cada lote.',
@@ -66,6 +69,7 @@ const services = [
     ),
   },
   {
+    slug: 'logistica-y-exportacion',
     title: 'Logística y exportación',
     description:
       'Logística integral para mercado interno y exportación. Coordinamos el prensado, la carga en contenedores y el transporte cumpliendo con los estándares internacionales de calidad.',
@@ -105,7 +109,8 @@ export default function ServiciosPage() {
             {services.map((service, i) => (
               <AnimatedSection key={service.title}>
                 <div
-                  className={`grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
+                  id={service.slug}
+                  className={`scroll-mt-28 grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
                     i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''
                   }`}
                 >
