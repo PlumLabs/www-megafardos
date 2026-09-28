@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-brand-green/80 via-brand-green/60 to-brand-green/30" />
       <div className="alfalfa-pattern absolute inset-0 opacity-20" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-24 pb-16 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-24 pb-24 relative z-10 w-full">
         <div className="max-w-3xl">
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
@@ -46,21 +46,8 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        {/* Stats teaser */}
-        <div className="grid grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24 pt-12 border-t border-white/10 max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-          {[
-            { value: '+1000', label: 'hectáreas de alfalfa' },
-            { value: '+8000', label: 'm² de galpones' },
-            { value: '+13', label: 'años de experiencia' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
-              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
+
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>

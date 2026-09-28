@@ -1,4 +1,4 @@
-// Botón flotante de Instagram (visible en todo el sitio de landing-4).
+// Botón flotante de Instagram (visible en todo el sitio).
 // Se ubica arriba del botón de WhatsApp.
 const INSTAGRAM_URL = 'https://www.instagram.com/megafardosdelnorte/'
 

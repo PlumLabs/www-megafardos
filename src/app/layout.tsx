@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import InstagramButton from '@/components/InstagramButton'
 
 export const metadata: Metadata = {
   title: 'Megafardos del Norte — Alfalfa de primera calidad',
@@ -13,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-AR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <InstagramButton />
+        <WhatsAppButton />
+      </body>
     </html>
   )
 }

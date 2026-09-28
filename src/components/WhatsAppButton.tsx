@@ -1,4 +1,4 @@
-// Botón flotante de WhatsApp (visible en todo el sitio de landing-4).
+// Botón flotante de WhatsApp (visible en todo el sitio).
 // Número real (solo dígitos, con código de país).
 const WHATSAPP_NUMBER = '5493525480178'
 const WHATSAPP_MESSAGE = 'Hola! Quería hacerles una consulta sobre sus productos de alfalfa.'

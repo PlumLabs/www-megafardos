@@ -45,11 +45,12 @@ export default function Header({
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16 md:h-20">
         <Link href={homeHref} onClick={() => setMenuOpen(false)} className="flex items-center gap-3">
           <Image
-            src="/logo.png"
+            src="/logo-header.png"
             alt="Megafardos del Norte"
-            width={160}
-            height={160}
-            className="object-contain"
+            width={1600}
+            height={596}
+            priority
+            className="h-11 md:h-14 w-auto object-contain"
           />
         </Link>
 
