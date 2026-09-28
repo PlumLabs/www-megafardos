@@ -1,26 +1,31 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import AnimatedSection from './AnimatedSection'
 
 const products = [
   {
+    slug: 'megafardos-prensados',
     title: 'Megafardos prensados',
     subtitle: 'Formato exportación',
     description: 'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
     image: '/images/microfardos-product.webp',
   },
   {
+    slug: 'pellets-de-alfalfa',
     title: 'Pellets de alfalfa',
     subtitle: 'Alta densidad',
     description: 'Producto obtenido mediante compresión de alfalfa deshidratada, ideal para una alimentación práctica y uniforme.',
     image: '/images/pellets.png',
   },
   {
+    slug: 'microfardos-de-alfalfa',
     title: 'Microfardos de alfalfa',
     subtitle: 'Fácil manejo',
     description: 'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
     image: '/images/prensado-product.webp',
   },
   {
+    slug: 'megafardos-de-alfalfa',
     title: 'Megafardos de alfalfa',
     subtitle: 'Mercado interno',
     description: 'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante todo el año.',
@@ -46,7 +51,10 @@ export default function Products() {
         <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, i) => (
             <AnimatedSection key={product.title} delay={i * 100} className="h-full">
-              <div className="group h-full flex flex-col bg-brand-cream shadow-sm hover:shadow-lg hover:shadow-brand-green/5 transition-shadow duration-300">
+              <Link
+                href={`/productos#${product.slug}`}
+                className="group h-full flex flex-col bg-brand-cream shadow-sm hover:shadow-lg hover:shadow-brand-green/5 transition-shadow duration-300"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={product.image}
@@ -66,7 +74,7 @@ export default function Products() {
                     {product.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             </AnimatedSection>
           ))}
         </div>

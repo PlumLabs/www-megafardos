@@ -1,7 +1,7 @@
 export default function CampoDecorativo() {
   return (
     <>
-      {/* Líneas de campo simétricas */}
+      {/* Symmetric field lines */}
       <div className="absolute bottom-0 left-0 right-0 h-32">
         <div
           className="absolute inset-0 opacity-[0.07]"
@@ -17,7 +17,7 @@ export default function CampoDecorativo() {
         />
       </div>
 
-      {/* Hojas decorativas flotando - izquierda */}
+      {/* Floating decorative leaves - left */}
       <div className="absolute top-1/4 left-4 md:left-12 text-4xl animate-float opacity-20 select-none pointer-events-none">
         🌿
       </div>
@@ -28,7 +28,7 @@ export default function CampoDecorativo() {
         🌾
       </div>
 
-      {/* Hojas decorativas flotando - derecha */}
+      {/* Floating decorative leaves - right */}
       <div
         className="absolute top-1/3 right-4 md:right-12 text-4xl opacity-20 select-none pointer-events-none"
         style={{ animation: 'float 3.5s ease-in-out infinite', animationDelay: '0.5s' }}
@@ -42,7 +42,7 @@ export default function CampoDecorativo() {
         🌾
       </div>
 
-      {/* Sol decorativo */}
+      {/* Decorative sun */}
       <div className="absolute top-8 right-8 md:right-16 w-20 h-20 md:w-28 md:h-28 rounded-full bg-[var(--gold-light)]/20 blur-xl select-none pointer-events-none" />
       <div className="absolute top-10 right-10 md:right-20 w-12 h-12 md:w-16 md:h-16 rounded-full bg-[var(--gold-light)]/30 blur-lg select-none pointer-events-none" />
     </>

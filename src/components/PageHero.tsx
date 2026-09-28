@@ -23,7 +23,7 @@ export default function PageHero({
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <nav className="flex items-center gap-2 text-xs text-white/60 mb-5">
-          <Link href="/landing-4" className="hover:text-white transition-colors">
+          <Link href="/" className="hover:text-white transition-colors">
             Inicio
           </Link>
           <span>/</span>
