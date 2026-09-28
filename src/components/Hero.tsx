@@ -46,7 +46,21 @@ export default function Hero() {
             </a>
           </div>
         </div>
+        {/* Stats teaser */}
+        <div className="grid grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24 pt-12 border-t border-white/10 max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+          {[
+            { value: '+1000', label: 'hectáreas de alfalfa' },
+            { value: '+8000', label: 'm² de galpones' },
+            { value: '+13', label: 'años de experiencia' },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
+              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
+
 
 
       {/* Scroll indicator */}

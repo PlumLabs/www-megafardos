@@ -10,7 +10,7 @@ export const SITE = {
   image: `${SITE_URL}/images/hero.png`,
   description:
     'Productores y exportadores de alfalfa de primera calidad en Jesús María, Córdoba, Argentina: megafardos, microfardos y pellets de alfalfa, y servicios agrícolas de siembra, cosecha y pulverización.',
-  email: 'info@megafardos.com',
+  email: 'info@megafardosdelnorte.com',
   phone: '+54 9 3525 48-0178',
   phoneE164: '+5493525480178',
   foundingDate: '2013',
