@@ -9,32 +9,36 @@ const products = [
     description:
       'Alfalfa seleccionada, compactada con alta densidad y preparada para transporte eficiente en contenedor y conservación de calidad. Apto para exportación.',
     image: '/images/microfardos-product.webp',
+    url: '/productos#megafardos-prensados',
   },
   {
     name: 'Pellets de alfalfa',
     description:
       'Alfalfa deshidratada comprimida en pellets de 8 mm x 40 mm, para una alimentación práctica y uniforme. Presentación en bolsa de 25 kg, big bag o granel. Mercado interno y exportación.',
     image: '/images/pellets.png',
+    url: '/productos#pellets-de-alfalfa',
   },
   {
     name: 'Microfardos de alfalfa',
     description:
       'Fardos pequeños de 20 a 23 kg (60x25x35 cm), de fácil manipulación, ideales para ganadería, equinos, feedlots, tambos y productores de pequeña y mediana escala.',
     image: '/images/prensado-product.webp',
+    url: '/productos#microfardos-de-alfalfa',
   },
   {
     name: 'Megafardos de alfalfa (mercado interno)',
     description:
       'Megafardos de 0,90 x 1,20 x 2,4 m y 550 a 750 kg, alfalfa secada al sol con humedad controlada menor al 18% y calidad constante todo el año.',
     image: '/images/deshidratada-product.webp',
+    url: '/productos#megafardos-de-alfalfa',
   },
 ]
 
 const services = [
-  { name: 'Siembra', description: 'Servicio de siembra de soja, maíz, trigo y alfalfa con maquinaria propia de última generación.' },
-  { name: 'Cosecha', description: 'Cosecha de soja, maíz, trigo y alfalfa con equipos propios de trilla y enfardado.' },
-  { name: 'Pulverización', description: 'Pulverización terrestre para todo tipo de cultivos, con aplicación precisa y eficiente.' },
-  { name: 'Logística y exportación', description: 'Prensado, carga en contenedores y transporte de alfalfa para mercado interno y exportación.' },
+  { name: 'Siembra', url: '/servicios#siembra', description: 'Servicio de siembra de soja, maíz, trigo y alfalfa con maquinaria propia de última generación.' },
+  { name: 'Cosecha', url: '/servicios#cosecha', description: 'Cosecha de soja, maíz, trigo y alfalfa con equipos propios de trilla y enfardado.' },
+  { name: 'Pulverización', url: '/servicios#pulverizacion', description: 'Pulverización terrestre para todo tipo de cultivos, con aplicación precisa y eficiente.' },
+  { name: 'Logística y exportación', url: '/servicios#logistica-y-exportacion', description: 'Prensado, carga en contenedores y transporte de alfalfa para mercado interno y exportación.' },
 ]
 
 export default function StructuredData() {
@@ -90,6 +94,7 @@ export default function StructuredData() {
             name: p.name,
             description: p.description,
             image: `${SITE_URL}${p.image}`,
+            url: `${SITE_URL}${p.url}`,
             brand: { '@type': 'Brand', name: SITE.name },
             category: 'Alfalfa / forraje',
           },
@@ -100,6 +105,7 @@ export default function StructuredData() {
             '@type': 'Service',
             name: s.name,
             description: s.description,
+            url: `${SITE_URL}${s.url}`,
             provider: { '@id': orgId },
             areaServed: 'Córdoba, Argentina',
           },

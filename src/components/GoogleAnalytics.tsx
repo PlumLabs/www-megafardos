@@ -1,13 +1,17 @@
 import Script from 'next/script'
 
 // Google Analytics 4 — propiedad "Megafardos del Norte" (flujo web www.megafardosdelnorte.com.ar).
-// Solo se carga en producción (next build/start), así no se registran visitas del entorno local.
-// Se puede sobreescribir con NEXT_PUBLIC_GA_ID.
+// Solo se carga en el deploy de producción (no en local ni en los previews de Vercel),
+// así no se mezclan visitas de prueba. Se puede sobreescribir con NEXT_PUBLIC_GA_ID.
 const DEFAULT_GA_ID = 'G-YC9PF5HL3V'
 
 export default function GoogleAnalytics() {
   const gaId =
-    process.env.NEXT_PUBLIC_GA_ID || (process.env.NODE_ENV === 'production' ? DEFAULT_GA_ID : '')
+    process.env.NEXT_PUBLIC_GA_ID ||
+    (process.env.NODE_ENV === 'production' &&
+    (process.env.NEXT_PUBLIC_VERCEL_ENV ?? 'production') === 'production'
+      ? DEFAULT_GA_ID
+      : '')
   if (!gaId) return null
 
   return (

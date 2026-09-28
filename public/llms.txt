@@ -11,16 +11,16 @@
 - Contacto: WhatsApp +54 9 3525 48-0178 (Emilio Dianotti) y +54 9 3525 48-0177 (Franco Dianotti) · info@megafardosdelnorte.com · Instagram @megafardosdelnorte
 
 ## Productos
-- [Megafardos prensados (exportación)](/productos): alfalfa seleccionada, alta densidad de compactación, preparada para contenedor y exportación.
-- [Pellets de alfalfa](/productos): 8 mm x 40 mm; bolsa de 25 kg, big bag o granel; mercado interno y exportación.
-- [Microfardos de alfalfa](/productos): 20 a 23 kg, 60x25x35 cm; para ganadería, caballos/equinos, feedlots, tambos y pequeños productores.
-- [Megafardos de alfalfa (mercado interno)](/productos): 0,90x1,20x2,4 m, 550 a 750 kg, humedad controlada <18%, secados al sol.
+- [Megafardos prensados (exportación)](/productos#megafardos-prensados): alfalfa seleccionada, alta densidad de compactación, preparada para contenedor y exportación.
+- [Pellets de alfalfa](/productos#pellets-de-alfalfa): 8 mm x 40 mm; bolsa de 25 kg, big bag o granel; mercado interno y exportación.
+- [Microfardos de alfalfa](/productos#microfardos-de-alfalfa): 20 a 23 kg, 60x25x35 cm; para ganadería, caballos/equinos, feedlots, tambos y pequeños productores.
+- [Megafardos de alfalfa (mercado interno)](/productos#megafardos-de-alfalfa): 0,90x1,20x2,4 m, 550 a 750 kg, humedad controlada <18%, secados al sol.
 
 ## Servicios
-- [Siembra](/servicios): soja, maíz, trigo y alfalfa.
-- [Cosecha](/servicios): soja, maíz, trigo y alfalfa, con trilla y enfardado propios.
-- [Pulverización](/servicios): terrestre, para todo tipo de cultivos.
-- [Logística y exportación](/servicios): prensado, carga en contenedores y transporte.
+- [Siembra](/servicios#siembra): soja, maíz, trigo y alfalfa.
+- [Cosecha](/servicios#cosecha): soja, maíz, trigo y alfalfa, con trilla y enfardado propios.
+- [Pulverización](/servicios#pulverizacion): terrestre, para todo tipo de cultivos.
+- [Logística y exportación](/servicios#logistica-y-exportacion): prensado, carga en contenedores y transporte.
 
 ## Preguntas frecuentes
 - ¿Dónde comprar alfalfa en Córdoba? Megafardos del Norte vende megafardos, microfardos y pellets de alfalfa desde Jesús María, Córdoba, con envíos a todo el país.
