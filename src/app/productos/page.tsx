@@ -7,8 +7,9 @@ import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata = {
   title: 'Productos — Megafardos del Norte',
+  alternates: { canonical: '/productos' },
   description:
-    'Alfalfa de primera calidad en megafardos, pellets y deshidratada. Para mercado interno y exportación.',
+    'Megafardos, microfardos y pellets de alfalfa de primera calidad desde Jesús María, Córdoba. Planta habilitada por SENASA y BPM. Mercado interno y exportación.',
 }
 
 const navLinks = [

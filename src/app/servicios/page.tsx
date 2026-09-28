@@ -7,6 +7,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 
 export const metadata = {
   title: 'Servicios — Megafardos del Norte',
+  alternates: { canonical: '/servicios' },
   description:
     'Servicios agropecuarios: siembra, cosecha, pulverización y logística. Maquinaria de última generación al servicio del campo.',
 }
