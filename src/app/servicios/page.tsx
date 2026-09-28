@@ -1,15 +1,21 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import PageHero from '@/components/PageHero'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
+import ServiceIcon from '@/components/ServiceIcon'
+import { getPaginaServicios, getServicios } from '@/lib/content'
+import { editable } from '@/lib/editable'
 
-export const metadata = {
-  title: 'Servicios — Megafardos del Norte',
-  alternates: { canonical: '/servicios' },
-  description:
-    'Servicios agropecuarios: siembra, cosecha, pulverización y logística. Maquinaria de última generación al servicio del campo.',
+export async function generateMetadata(): Promise<Metadata> {
+  const pagina = await getPaginaServicios()
+  return {
+    title: pagina.seoTitulo,
+    alternates: { canonical: '/servicios' },
+    description: pagina.seoDescripcion,
+  }
 }
 
 const navLinks = [
@@ -25,67 +31,9 @@ const waHref = (service: string) =>
     `Hola! Me interesa el servicio de ${service}. ¿Me pasan más información?`,
   )}`
 
-const services = [
-  {
-    slug: 'siembra',
-    title: 'Siembra',
-    description:
-      'Servicio de siembra para soja, maíz, trigo y alfalfa con maquinaria de última generación.',
-    image: '/images/siembra.webp',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-        <path d="M16 4v12M12 8l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M6 26h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    slug: 'cosecha',
-    title: 'Cosecha',
-    description:
-      'Cosecha de soja, maíz, trigo y alfalfa con equipos de trilla y enfardado de última generación. Control total del proceso productivo para garantizar la mejor calidad del grano y el forraje.',
-    image: '/images/hero-2.png',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-        <path d="M24 20c-2 0-4-1-5-3-1-2-1-5-1-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M6 26h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="22" cy="22" r="4" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    slug: 'pulverizacion',
-    title: 'Pulverización',
-    description:
-      'Pulverización terrestre para todo tipo de cultivos. Aplicación precisa y eficiente con equipos modernos que optimizan el uso de insumos y cuidan el rendimiento de cada lote.',
-    image: '/images/pulverizacion.webp',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-        <path d="M10 12h12v4H10z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M6 20h20v2H6z" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="16" cy="8" r="2" fill="currentColor" />
-      </svg>
-    ),
-  },
-  {
-    slug: 'logistica-y-exportacion',
-    title: 'Logística y exportación',
-    description:
-      'Logística integral para mercado interno y exportación. Coordinamos el prensado, la carga en contenedores y el transporte cumpliendo con los estándares internacionales de calidad.',
-    image: '/images/logistica.webp',
-    icon: (
-      <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-        <path d="M4 10h14v10H4z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M18 13h6l4 4v3h-10z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <circle cx="9" cy="23" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="23" cy="23" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-]
+export default async function ServiciosPage() {
+  const [pagina, services] = await Promise.all([getPaginaServicios(), getServicios()])
 
-export default function ServiciosPage() {
   return (
     <>
       <Header
@@ -94,30 +42,31 @@ export default function ServiciosPage() {
         ctaHref="/#contacto"
       />
 
-      <main>
+      <main {...editable(pagina)}>
         <PageHero
-          eyebrow="Servicios"
-          title="Servicios al"
-          highlight="campo"
-          breadcrumb="Servicios al campo"
-          description="Además de producir alfalfa de primera calidad, ponemos nuestra experiencia y maquinaria de última generación a disposición de otros productores."
-          image="/images/equipo2.png"
+          eyebrow={pagina.heroEtiqueta}
+          title={pagina.heroTitulo}
+          highlight={pagina.heroDestacado}
+          breadcrumb={pagina.heroMiga}
+          description={pagina.heroTexto}
+          image={pagina.heroImagen}
         />
 
         <section className="py-20 md:py-28 bg-brand-beige/30">
           <div className="max-w-7xl mx-auto px-6 space-y-16 md:space-y-24">
             {services.map((service, i) => (
-              <AnimatedSection key={service.title}>
+              <AnimatedSection key={service.slug}>
                 <div
                   id={service.slug}
+                  {...editable(service)}
                   className={`scroll-mt-28 grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
                     i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''
                   }`}
                 >
                   <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src={service.image}
-                      alt={service.title}
+                      src={service.imagen.src}
+                      alt={service.imagen.alt}
                       fill
                       className="object-cover"
                     />
@@ -126,22 +75,22 @@ export default function ServiciosPage() {
 
                   <div>
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-brand-green/5 text-brand-green-light mb-5">
-                      {service.icon}
+                      <ServiceIcon icono={service.icono} />
                     </div>
                     <h2 className="text-2xl md:text-4xl font-extrabold text-brand-green leading-tight">
-                      {service.title}
+                      {service.titulo}
                     </h2>
                     <div className="w-12 h-0.5 bg-brand-gold mt-5" />
                     <p className="text-brand-green/70 leading-relaxed mt-5">
-                      {service.description}
+                      {service.descripcion}
                     </p>
                     <a
-                      href={waHref(service.title)}
+                      href={waHref(service.titulo)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
                     >
-                      Consultar por {service.title}
+                      Consultar por {service.titulo}
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -157,10 +106,10 @@ export default function ServiciosPage() {
         <section className="bg-brand-green py-16 md:py-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
-              ¿Necesitás servicios para tu campo?
+              {pagina.ctaTitulo}
             </h2>
             <p className="text-white/70 mt-4 max-w-xl mx-auto">
-              Contactanos y coordinamos siembra, cosecha, pulverización o logística según tu necesidad.
+              {pagina.ctaTexto}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Link

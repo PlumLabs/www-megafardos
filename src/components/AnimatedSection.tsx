@@ -7,11 +7,14 @@ export default function AnimatedSection({
   className = '',
   type = 'reveal',
   delay = 0,
+  ...attrs
 }: {
   children: React.ReactNode
   className?: string
   type?: 'reveal' | 'reveal-left' | 'reveal-right' | 'reveal-scale'
   delay?: number
+  /** Atributos data-* (por ejemplo los del Visual Editor de Storyblok). */
+  [data: `data-${string}`]: string
 }) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -34,7 +37,7 @@ export default function AnimatedSection({
   }, [delay])
 
   return (
-    <div ref={ref} className={`${type} ${className}`}>
+    <div ref={ref} {...attrs} className={`${type} ${className}`}>
       {children}
     </div>
   )

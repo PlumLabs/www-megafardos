@@ -1,15 +1,20 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import PageHero from '@/components/PageHero'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
+import { getPaginaProductos, getProductos } from '@/lib/content'
+import { editable } from '@/lib/editable'
 
-export const metadata = {
-  title: 'Productos — Megafardos del Norte',
-  alternates: { canonical: '/productos' },
-  description:
-    'Megafardos, microfardos y pellets de alfalfa de primera calidad desde Jesús María, Córdoba. Planta habilitada por SENASA y BPM. Mercado interno y exportación.',
+export async function generateMetadata(): Promise<Metadata> {
+  const pagina = await getPaginaProductos()
+  return {
+    title: pagina.seoTitulo,
+    alternates: { canonical: '/productos' },
+    description: pagina.seoDescripcion,
+  }
 }
 
 const navLinks = [
@@ -25,66 +30,9 @@ const waHref = (product: string) =>
     `Hola! Me interesa el producto "${product}". ¿Me pasan más información y precio?`,
   )}`
 
-const products = [
-  {
-    slug: 'megafardos-prensados',
-    title: 'Megafardos prensados',
-    subtitle: 'Formato exportación',
-    description:
-      'Alfalfa seleccionada, compactada y preparada para transporte eficiente y conservación de calidad.',
-    image: '/images/microfardos-product.webp',
-    features: [
-      'Materia prima seleccionada',
-      'Alta densidad de compactación',
-      'Apto para exportación',
-      'Conservación de calidad',
-    ],
-  },
-  {
-    slug: 'pellets-de-alfalfa',
-    title: 'Pellets de alfalfa',
-    subtitle: 'Alta densidad',
-    description:
-      'Producto obtenido mediante compresión de alfalfa deshidratada, ideal para una alimentación práctica y uniforme. Producción propia con calidad constante.',
-    image: '/images/pellets.png',
-    features: [
-      'Alimentación práctica y uniforme',
-      'Bolsa 25 kg · Big Bag · Granel',
-      '8 mm x 40 mm',
-      'Mercado interno y exportación',
-    ],
-  },
-  {
-    slug: 'microfardos-de-alfalfa',
-    title: 'Microfardos de alfalfa',
-    subtitle: 'Fácil manejo',
-    description:
-      'Fardos pequeños, perfectos para ganadería, equinos y productores de pequeña y mediana escala.',
-    image: '/images/prensado-product.webp',
-    features: [
-      '20 a 23 kg',
-      '60x25x35 cm',
-      'Fácil manipulación',
-      'Ideal para feedlots y tambos',
-    ],
-  },
-  {
-    slug: 'megafardos-de-alfalfa',
-    title: 'Megafardos de alfalfa',
-    subtitle: 'Mercado interno',
-    description:
-      'Alfalfa secada al sol, procesada para conservar sus propiedades y valor nutricional. Humedad controlada y calidad constante durante todo el año.',
-    image: '/images/deshidratada-product.webp',
-    features: [
-      '0.90x1.20x2.4 m',
-      'Humedad controlada <18%',
-      '550 a 750 kg',
-      'Calidad constante todo el año',
-    ],
-  },
-]
+export default async function ProductosPage() {
+  const [pagina, products] = await Promise.all([getPaginaProductos(), getProductos()])
 
-export default function ProductosPage() {
   return (
     <>
       <Header
@@ -93,30 +41,31 @@ export default function ProductosPage() {
         ctaHref="/#contacto"
       />
 
-      <main>
+      <main {...editable(pagina)}>
         <PageHero
-          eyebrow="Productos"
-          title="Nuestros"
-          breadcrumb="Nuestros Productos"
-          highlight="productos"
-          description="Ofrecemos alfalfa de calidad en distintos formatos para adaptarnos a las necesidades de cada cliente. Planta habilitada por SENASA y bajo estándares de Buenas Prácticas de Manufactura (BPM)."
-          image="/images/fardos.png"
+          eyebrow={pagina.heroEtiqueta}
+          title={pagina.heroTitulo}
+          breadcrumb={pagina.heroMiga}
+          highlight={pagina.heroDestacado}
+          description={pagina.heroTexto}
+          image={pagina.heroImagen}
         />
 
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 space-y-16 md:space-y-24">
             {products.map((product, i) => (
-              <AnimatedSection key={product.title}>
+              <AnimatedSection key={product.slug}>
                 <div
                   id={product.slug}
+                  {...editable(product)}
                   className={`scroll-mt-28 grid md:grid-cols-2 gap-8 md:gap-14 items-center ${
                     i % 2 === 1 ? 'md:[&>*:first-child]:order-2' : ''
                   }`}
                 >
                   <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src={product.image}
-                      alt={product.title}
+                      src={product.imagen.src}
+                      alt={product.imagen.alt}
                       fill
                       className="object-cover"
                     />
@@ -125,17 +74,17 @@ export default function ProductosPage() {
 
                   <div>
                     <span className="text-xs font-semibold text-brand-gold uppercase tracking-wider">
-                      {product.subtitle}
+                      {product.etiqueta}
                     </span>
                     <h2 className="text-2xl md:text-4xl font-extrabold text-brand-green mt-2 leading-tight">
-                      {product.title}
+                      {product.titulo}
                     </h2>
                     <div className="w-12 h-0.5 bg-brand-gold mt-5" />
                     <p className="text-brand-green/70 leading-relaxed mt-5">
-                      {product.description}
+                      {product.descripcion}
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mt-6">
-                      {product.features.map((feature) => (
+                      {product.caracteristicas.map((feature) => (
                         <li
                           key={feature}
                           className="flex items-start gap-2 text-sm text-brand-green/80"
@@ -156,7 +105,7 @@ export default function ProductosPage() {
                       ))}
                     </ul>
                     <a
-                      href={waHref(product.title)}
+                      href={waHref(product.titulo)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white bg-brand-green hover:bg-brand-green-mid transition-colors px-5 py-2.5 rounded-full"
@@ -177,10 +126,10 @@ export default function ProductosPage() {
         <section className="bg-brand-green py-16 md:py-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
-              ¿Buscás alfalfa de primera calidad?
+              {pagina.ctaTitulo}
             </h2>
             <p className="text-white/70 mt-4 max-w-xl mx-auto">
-              Contactanos y te asesoramos sobre el producto que mejor se adapta a tu operación.
+              {pagina.ctaTexto}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Link
