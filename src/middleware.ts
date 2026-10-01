@@ -19,6 +19,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next assets and static files (images, robots.txt, sitemap.xml, llms.txt...).
-  matcher: ['/((?!_next/|.*\\..*).*)'],
+  // Skip Next assets, API routes (Storyblok preview and webhook) and static files
+  // (images, robots.txt, sitemap.xml, llms.txt...).
+  matcher: ['/((?!_next/|api/|.*\\..*).*)'],
 }

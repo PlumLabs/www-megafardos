@@ -1,13 +1,15 @@
 'use client'
 
 import Image from 'next/image'
+import type { Home } from '@/content/types'
+import { editable } from '@/lib/editable'
 
-export default function Hero() {
+export default function Hero({ hero }: { hero: Home['hero'] }) {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section {...editable(hero)} className="relative min-h-screen flex items-center overflow-hidden">
       <Image
-        src="/images/hero.png"
-        alt="Campo de alfalfa"
+        src={hero.imagen.src}
+        alt={hero.imagen.alt}
         fill
         className="object-cover"
         priority
@@ -19,13 +21,17 @@ export default function Hero() {
         <div className="max-w-3xl">
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            Alfalfa
-            <br />
-            <span className="text-brand-gold-light">de calidad </span>
+            {hero.titulo}
+            {hero.tituloDestacado && (
+              <>
+                <br />
+                <span className="text-brand-gold-light">{hero.tituloDestacado} </span>
+              </>
+            )}
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-          Tecnología, excelencia y compromiso en cada etapa del proceso productivo.
+          {hero.bajada}
           </p>
 
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
@@ -48,14 +54,10 @@ export default function Hero() {
         </div>
         {/* Stats teaser */}
         <div className="grid grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24 pt-12 border-t border-white/10 max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-          {[
-            { value: '+1000', label: 'hectáreas de alfalfa' },
-            { value: '+8000', label: 'm² de galpones' },
-            { value: '+13', label: 'años de experiencia' },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
-              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.label}</div>
+          {hero.datos.map((stat, i) => (
+            <div key={i} {...editable(stat)}>
+              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.valor}</div>
+              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.texto}</div>
             </div>
           ))}
         </div>

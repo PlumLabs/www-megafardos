@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { draftMode } from 'next/headers'
 import './globals.css'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import InstagramButton from '@/components/InstagramButton'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import StructuredData from '@/components/StructuredData'
+import StoryblokBridge from '@/components/StoryblokBridge'
 import { SITE, SITE_URL } from '@/lib/site'
 import { MAINTENANCE_MODE } from '@/lib/maintenance'
 
@@ -66,6 +68,7 @@ export default function RootLayout({
           </>
         )}
         <GoogleAnalytics />
+        {draftMode().isEnabled && <StoryblokBridge />}
       </body>
     </html>
   )

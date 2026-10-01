@@ -1,47 +1,25 @@
 import { SITE, SITE_URL } from '@/lib/site'
+import { getProductos, getServicios } from '@/lib/content'
 
 // Datos estructurados schema.org (JSON-LD). Los usan Google y los buscadores de IA
 // (ChatGPT, Perplexity, Gemini, Claude, Copilot) para entender quién es la empresa,
-// qué vende, qué servicios da y dónde opera.
-const products = [
-  {
-    name: 'Megafardos prensados de alfalfa (formato exportación)',
-    description:
-      'Alfalfa seleccionada, compactada con alta densidad y preparada para transporte eficiente en contenedor y conservación de calidad. Apto para exportación.',
-    image: '/images/microfardos-product.webp',
-    url: '/productos#megafardos-prensados',
-  },
-  {
-    name: 'Pellets de alfalfa',
-    description:
-      'Alfalfa deshidratada comprimida en pellets de 8 mm x 40 mm, para una alimentación práctica y uniforme. Presentación en bolsa de 25 kg, big bag o granel. Mercado interno y exportación.',
-    image: '/images/pellets.png',
-    url: '/productos#pellets-de-alfalfa',
-  },
-  {
-    name: 'Microfardos de alfalfa',
-    description:
-      'Fardos pequeños de 20 a 23 kg (60x25x35 cm), de fácil manipulación, ideales para ganadería, equinos, feedlots, tambos y productores de pequeña y mediana escala.',
-    image: '/images/prensado-product.webp',
-    url: '/productos#microfardos-de-alfalfa',
-  },
-  {
-    name: 'Megafardos de alfalfa (mercado interno)',
-    description:
-      'Megafardos de 0,90 x 1,20 x 2,4 m y 550 a 750 kg, alfalfa secada al sol con humedad controlada menor al 18% y calidad constante todo el año.',
-    image: '/images/deshidratada-product.webp',
-    url: '/productos#megafardos-de-alfalfa',
-  },
-]
+// qué vende, qué servicios da y dónde opera. Productos y servicios salen de
+// Storyblok (campos "Nombre SEO" y "Descripción SEO").
 
-const services = [
-  { name: 'Siembra', url: '/servicios#siembra', description: 'Servicio de siembra de soja, maíz, trigo y alfalfa con maquinaria propia de última generación.' },
-  { name: 'Cosecha', url: '/servicios#cosecha', description: 'Cosecha de soja, maíz, trigo y alfalfa con equipos propios de trilla y enfardado.' },
-  { name: 'Pulverización', url: '/servicios#pulverizacion', description: 'Pulverización terrestre para todo tipo de cultivos, con aplicación precisa y eficiente.' },
-  { name: 'Logística y exportación', url: '/servicios#logistica-y-exportacion', description: 'Prensado, carga en contenedores y transporte de alfalfa para mercado interno y exportación.' },
-]
-
-export default function StructuredData() {
+const abs = (src: string) => (src.startsWith('http') ? src : `${SITE_URL}${src}`)
+export default async function StructuredData() {
+  const [productos, servicios] = await Promise.all([getProductos(), getServicios()])
+  const products = productos.map((p) => ({
+    name: p.seoNombre,
+    description: p.seoDescripcion,
+    image: p.imagen.src,
+    url: `/productos#${p.slug}`,
+  }))
+  const services = servicios.map((s) => ({
+    name: s.titulo,
+    description: s.seoDescripcion,
+    url: `/servicios#${s.slug}`,
+  }))
   const orgId = `${SITE_URL}/#organization`
 
   const graph = [
@@ -93,7 +71,7 @@ export default function StructuredData() {
             '@type': 'Product',
             name: p.name,
             description: p.description,
-            image: `${SITE_URL}${p.image}`,
+            image: abs(p.image),
             url: `${SITE_URL}${p.url}`,
             brand: { '@type': 'Brand', name: SITE.name },
             category: 'Alfalfa / forraje',
