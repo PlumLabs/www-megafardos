@@ -10,7 +10,7 @@
 // Variables:
 //   STORYBLOK_OAUTH_TOKEN      Personal access token (Storyblok → My account → Account settings → Personal access token)
 //   STORYBLOK_SPACE_ID         ID numérico del espacio (Settings → Space)
-//   STORYBLOK_REGION           eu (default) | us | ca | ap
+//   STORYBLOK_REGION           eu | us | ca | ap (opcional: si no está, se detecta sola)
 //   STORYBLOK_PREVIEW_SECRET   si está, configura la URL del Visual Editor apuntando al sitio
 //   NEXT_PUBLIC_SITE_URL       dominio del sitio para esa URL (default: producción)
 //
@@ -36,7 +36,7 @@ const HOSTS: Record<string, string> = {
 
 const TOKEN = process.env.STORYBLOK_OAUTH_TOKEN
 const SPACE = process.env.STORYBLOK_SPACE_ID
-const REGION = (process.env.STORYBLOK_REGION || 'eu').toLowerCase()
+let REGION = (process.env.STORYBLOK_REGION || '').toLowerCase()
 const ONLY_SCHEMA = process.argv.includes('--solo-esquema')
 const OVERWRITE = process.argv.includes('--sobrescribir')
 
@@ -44,13 +44,50 @@ if (!TOKEN || !SPACE) {
   console.error('Faltan STORYBLOK_OAUTH_TOKEN y/o STORYBLOK_SPACE_ID. Ver docs/storyblok.md.')
   process.exit(1)
 }
-if (!HOSTS[REGION]) {
+if (REGION && !HOSTS[REGION]) {
   console.error(`STORYBLOK_REGION inválida: ${REGION} (eu, us, ca o ap)`)
   process.exit(1)
 }
 
-// STORYBLOK_MAPI_URL solo para pruebas contra un servidor local.
-const API = `${process.env.STORYBLOK_MAPI_URL || HOSTS[REGION]}/spaces/${SPACE}`
+let API = ''
+
+// Busca en qué región está el espacio probando cada servidor.
+async function detectRegion() {
+  if (process.env.STORYBLOK_MAPI_URL) {
+    // Solo para pruebas contra un servidor local.
+    API = `${process.env.STORYBLOK_MAPI_URL}/spaces/${SPACE}`
+    REGION = REGION || 'eu'
+    return
+  }
+  const candidates = REGION ? [REGION] : Object.keys(HOSTS)
+  const errors: string[] = []
+  for (const region of candidates) {
+    let res: Response
+    try {
+      res = await fetch(`${HOSTS[region]}/spaces/${SPACE}`, {
+        headers: { Authorization: TOKEN as string },
+      })
+    } catch (e) {
+      errors.push(`${region}: sin conexión (${e instanceof Error ? e.message : e})`)
+      continue
+    }
+    if (res.ok) {
+      REGION = region
+      API = `${HOSTS[region]}/spaces/${SPACE}`
+      return
+    }
+    errors.push(`${region}: ${res.status} ${(await res.text()).slice(0, 120)}`)
+  }
+  console.error(
+    [
+      `No se pudo acceder al espacio ${SPACE}.`,
+      ...errors.map((e) => `  ${e}`),
+      'Revisá el Space ID y que el personal access token tenga acceso a este espacio',
+      'con permisos de lectura y escritura.',
+    ].join('\n'),
+  )
+  process.exit(1)
+}
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 // Límite de la Management API: 3 pedidos por segundo en el plan gratuito.
@@ -217,7 +254,9 @@ async function configurePreview() {
 }
 
 async function main() {
-  console.log(`Storyblok espacio ${SPACE} (${REGION})`)
+  await detectRegion()
+  console.log(`Storyblok espacio ${SPACE} (región ${REGION})`)
+  console.log(`  para Vercel: STORYBLOK_REGION=${REGION}`)
   console.log('1. Componentes')
   await syncComponents()
   if (ONLY_SCHEMA) return

@@ -24,8 +24,8 @@ Detalles para quien edita:
 
 ## Puesta en marcha (una sola vez)
 
-1. **Crear el espacio** en Storyblok (plan gratuito alcanza). Anotar la región elegida y el *Space ID* (Settings → Space).
-2. **Personal access token**: My account → Account settings → Personal access token → Generate. Es para el script, no va a Vercel.
+1. **Crear el espacio** en Storyblok (plan gratuito alcanza). El *Space ID* es el número del link: `app.storyblok.com/#/me/spaces/<SPACE_ID>/...`. La región la detecta el script.
+2. **Personal access token**: My account → Account settings → Personal access tokens → Generate New Token, con acceso a este espacio y permisos de lectura y escritura. Se ve una sola vez. Es para el script, no va a Vercel.
 3. **Preview token del espacio**: Settings → Access Tokens → el de tipo *Preview*.
 4. **Inventar dos claves** largas al azar para `STORYBLOK_PREVIEW_SECRET` y `STORYBLOK_WEBHOOK_SECRET` (por ejemplo `openssl rand -hex 24`).
 5. **Cargar esquema y contenido** desde la carpeta del proyecto:
@@ -33,12 +33,11 @@ Detalles para quien edita:
    ```bash
    STORYBLOK_OAUTH_TOKEN=... \
    STORYBLOK_SPACE_ID=... \
-   STORYBLOK_REGION=eu \
    STORYBLOK_PREVIEW_SECRET=... \
    npm run storyblok:setup
    ```
 
-   Crea los componentes, las carpetas y todas las stories con el contenido actual del sitio (sube las imágenes y publica). También configura la URL del Visual Editor. Se puede volver a correr: actualiza los componentes y no toca stories existentes (salvo con `--sobrescribir`). Con `--solo-esquema` solo actualiza los componentes.
+   Al empezar muestra la región del espacio (es el valor de `STORYBLOK_REGION` para Vercel). Crea los componentes, las carpetas y todas las stories con el contenido actual del sitio (sube las imágenes y publica). También configura la URL del Visual Editor. Se puede volver a correr: actualiza los componentes y no toca stories existentes (salvo con `--sobrescribir`). Con `--solo-esquema` solo actualiza los componentes.
 
 6. **Variables en Vercel** (Settings → Environment Variables, Production y Preview): `STORYBLOK_TOKEN`, `STORYBLOK_REGION`, `STORYBLOK_PREVIEW_SECRET`, `STORYBLOK_WEBHOOK_SECRET`. Redeploy.
 7. **Webhook** en Storyblok (Settings → Webhooks → New):
