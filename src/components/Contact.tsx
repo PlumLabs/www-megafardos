@@ -13,8 +13,8 @@ const certifications = [
 ]
 
 const whatsappContacts = [
-  { name: 'Emilio Dianotti', phone: '+54 9 3525 48-0178' },
-  { name: 'Franco Dianotti', phone: '+54 9 3525 48-0177' },
+  { name: 'Emilio Daniotti', phone: '+54 9 3525 48-0178' },
+  { name: 'Franco Daniotti', phone: '+54 9 3525 48-0177' },
 ]
 
 // wa.me needs the number in international format, digits only.
