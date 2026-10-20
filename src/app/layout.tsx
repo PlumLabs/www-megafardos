@@ -5,6 +5,7 @@ import InstagramButton from '@/components/InstagramButton'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import StructuredData from '@/components/StructuredData'
 import { SITE, SITE_URL } from '@/lib/site'
+import { socialMetadata } from '@/lib/metadata'
 import { MAINTENANCE_MODE } from '@/lib/maintenance'
 
 export const metadata: Metadata = {
@@ -26,21 +27,11 @@ export const metadata: Metadata = {
     'siembra cosecha pulverización Córdoba',
   ],
   alternates: { canonical: '/' },
-  openGraph: {
-    type: 'website',
-    locale: 'es_AR',
-    url: SITE_URL,
-    siteName: SITE.name,
+  ...socialMetadata({
+    path: '/',
     title: 'Megafardos del Norte — Alfalfa de primera calidad',
     description: SITE.description,
-    images: [{ url: '/images/hero.png', alt: 'Megafardos del Norte — alfalfa de primera calidad' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Megafardos del Norte — Alfalfa de primera calidad',
-    description: SITE.description,
-    images: ['/images/hero.png'],
-  },
+  }),
   robots: { index: true, follow: true },
   // Verificación de Google Search Console (método "etiqueta HTML").
   verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION

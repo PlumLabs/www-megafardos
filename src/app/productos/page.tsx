@@ -4,12 +4,17 @@ import Header from '@/components/Header'
 import PageHero from '@/components/PageHero'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
+import { socialMetadata } from '@/lib/metadata'
+
+const TITLE = 'Productos — Megafardos del Norte'
+const DESCRIPTION =
+  'Megafardos, microfardos y pellets de alfalfa de primera calidad desde Jesús María, Córdoba. Planta habilitada por SENASA y BPM. Mercado interno y exportación.'
 
 export const metadata = {
-  title: 'Productos — Megafardos del Norte',
+  title: TITLE,
   alternates: { canonical: '/productos' },
-  description:
-    'Megafardos, microfardos y pellets de alfalfa de primera calidad desde Jesús María, Córdoba. Planta habilitada por SENASA y BPM. Mercado interno y exportación.',
+  description: DESCRIPTION,
+  ...socialMetadata({ path: '/productos', title: TITLE, description: DESCRIPTION }),
 }
 
 const navLinks = [
