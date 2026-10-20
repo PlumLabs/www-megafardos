@@ -4,12 +4,17 @@ import Header from '@/components/Header'
 import PageHero from '@/components/PageHero'
 import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
+import { socialMetadata } from '@/lib/metadata'
+
+const TITLE = 'Servicios — Megafardos del Norte'
+const DESCRIPTION =
+  'Servicios agropecuarios: siembra, cosecha, pulverización y logística. Maquinaria de última generación al servicio del campo.'
 
 export const metadata = {
-  title: 'Servicios — Megafardos del Norte',
+  title: TITLE,
   alternates: { canonical: '/servicios' },
-  description:
-    'Servicios agropecuarios: siembra, cosecha, pulverización y logística. Maquinaria de última generación al servicio del campo.',
+  description: DESCRIPTION,
+  ...socialMetadata({ path: '/servicios', title: TITLE, description: DESCRIPTION }),
 }
 
 const navLinks = [

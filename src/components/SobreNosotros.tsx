@@ -12,7 +12,7 @@ export default function SobreNosotros() {
               Sobre nosotros
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-brand-green mt-4 leading-tight uppercase">
-              MegaFardos
+              Megafardos
               <br />
               <span className="text-brand-gold">del Norte</span>
             </h2>
@@ -45,7 +45,7 @@ export default function SobreNosotros() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/megafardo-campo.webp"
-                alt="Planta MegaFardos del Norte"
+                alt="Planta Megafardos del Norte"
                 fill
                 className="object-cover"
               />
