@@ -2,7 +2,7 @@ import Link from 'next/link'
 import AnimatedSection from './AnimatedSection'
 
 const ALT =
-  'Mapa de los destinos de exportación de Megafardos del Norte desde Jesús María, Córdoba, Argentina: Arabia Saudí, Brasil, Chile, Emiratos Árabes Unidos, Guatemala, Indonesia, Jordania, Malasia, Qatar, República Dominicana y Tailandia.'
+  'Mapa de los destinos de exportación de Megafardos del Norte desde Jesús María, Córdoba, Argentina: Arabia Saudí, Brasil, Chile, Colombia, Emiratos Árabes Unidos, Guatemala, Indonesia, Jordania, Malasia, Perú, Qatar, República Dominicana, Tailandia, Uruguay y Vietnam.'
 
 function BotonExportacion({ className = '' }: { className?: string }) {
   return (
