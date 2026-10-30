@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 import { getPaginaProductos, getProductos } from '@/lib/content'
 import { editable } from '@/lib/editable'
+import { socialMetadata } from '@/lib/metadata'
 
 export async function generateMetadata(): Promise<Metadata> {
   const pagina = await getPaginaProductos()
@@ -14,6 +15,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: pagina.seoTitulo,
     alternates: { canonical: '/productos' },
     description: pagina.seoDescripcion,
+    ...socialMetadata({
+      path: '/productos',
+      title: pagina.seoTitulo,
+      description: pagina.seoDescripcion,
+    }),
   }
 }
 

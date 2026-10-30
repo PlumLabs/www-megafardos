@@ -8,6 +8,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import ServiceIcon from '@/components/ServiceIcon'
 import { getPaginaServicios, getServicios } from '@/lib/content'
 import { editable } from '@/lib/editable'
+import { socialMetadata } from '@/lib/metadata'
 
 export async function generateMetadata(): Promise<Metadata> {
   const pagina = await getPaginaServicios()
@@ -15,6 +16,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title: pagina.seoTitulo,
     alternates: { canonical: '/servicios' },
     description: pagina.seoDescripcion,
+    ...socialMetadata({
+      path: '/servicios',
+      title: pagina.seoTitulo,
+      description: pagina.seoDescripcion,
+    }),
   }
 }
 

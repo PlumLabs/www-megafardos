@@ -12,20 +12,19 @@ export const HOME: Home = {
     imagen: { src: '/images/hero.png', alt: 'Campo de alfalfa' },
     datos: [
       { valor: '+1000', texto: 'hectáreas de alfalfa' },
-      { valor: '+8000', texto: 'm² de galpones' },
       { valor: '+13', texto: 'años de experiencia' },
     ],
   },
   empresa: {
     etiqueta: 'Sobre nosotros',
-    titulo: 'MegaFardos',
+    titulo: 'Megafardos',
     tituloDestacado: 'del Norte',
     texto: [
       'Somos una empresa ubicada en Jesús María, Córdoba, especializada en la producción, procesamiento y comercialización de alfalfa de alta calidad.',
       'Aplicamos tecnología, maquinaria propia y controles de calidad en cada etapa, para responder a las exigencias de mercados nacionales e internacionales.',
       'Además, brindamos servicios de siembra, cosecha y pulverización con equipamiento de última generación.',
     ].join('\n\n'),
-    imagen: { src: '/images/megafardo-campo.webp', alt: 'Planta MegaFardos del Norte' },
+    imagen: { src: '/images/megafardo-campo.webp', alt: 'Planta Megafardos del Norte' },
   },
   historia: {
     etiqueta: 'Nuestra historia',
@@ -75,8 +74,8 @@ export const HOME: Home = {
     titulo: 'Contacto',
     texto: 'Comunicate con nosotros por WhatsApp.',
     whatsapp: [
-      { nombre: 'Emilio Dianotti', telefono: '+54 9 3525 48-0178' },
-      { nombre: 'Franco Dianotti', telefono: '+54 9 3525 48-0177' },
+      { nombre: 'Emilio Daniotti', telefono: '+54 9 3525 48-0178' },
+      { nombre: 'Franco Daniotti', telefono: '+54 9 3525 48-0177' },
     ],
     email: 'info@megafardosdelnorte.com',
     ubicacion: 'Jesús María, Córdoba',
