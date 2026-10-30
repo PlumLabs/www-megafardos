@@ -7,6 +7,7 @@ import Services from '@/components/Services'
 import ComercioInternacional from '@/components/ComercioInternacional'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import { getHome, getProductos, getServicios } from '@/lib/content'
 
 const navLinks = [
   { label: 'Nosotros', href: '#nosotros' },
@@ -14,18 +15,20 @@ const navLinks = [
   { label: 'Servicios', href: '/servicios' },
 ]
 
-export default function Home() {
+export default async function Home() {
+  const [home, productos, servicios] = await Promise.all([getHome(), getProductos(), getServicios()])
+
   return (
     <>
       <Header links={navLinks} homeHref="/" />
       <main>
-        <Hero />
-        <SobreNosotros />
-        <About />
-        <Products />
-        <Services />
+        <Hero hero={home.hero} />
+        <SobreNosotros empresa={home.empresa} />
+        <About historia={home.historia} />
+        <Products seccion={home.productos} products={productos} />
+        <Services seccion={home.servicios} services={servicios} />
         <ComercioInternacional />
-        <Contact />
+        <Contact calidad={home.calidad} contacto={home.contacto} />
       </main>
       <Footer />
     </>
