@@ -1,15 +1,13 @@
 'use client'
 
 import Image from 'next/image'
-import type { Home } from '@/content/types'
-import { editable } from '@/lib/editable'
 
-export default function Hero({ hero }: { hero: Home['hero'] }) {
+export default function Hero() {
   return (
-    <section {...editable(hero)} className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <Image
-        src={hero.imagen.src}
-        alt={hero.imagen.alt}
+        src="/images/hero.png"
+        alt="Campo de alfalfa"
         fill
         className="object-cover"
         priority
@@ -21,17 +19,13 @@ export default function Hero({ hero }: { hero: Home['hero'] }) {
         <div className="max-w-3xl">
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-6 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            {hero.titulo}
-            {hero.tituloDestacado && (
-              <>
-                <br />
-                <span className="text-brand-gold-light">{hero.tituloDestacado} </span>
-              </>
-            )}
+            Alfalfa
+            <br />
+            <span className="text-brand-gold-light">de calidad </span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-xl mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-          {hero.bajada}
+          Tecnología, excelencia y compromiso en cada etapa del proceso productivo.
           </p>
 
           <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
@@ -54,10 +48,13 @@ export default function Hero({ hero }: { hero: Home['hero'] }) {
         </div>
         {/* Stats teaser */}
         <div className="grid grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24 pt-12 border-t border-white/10 max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-          {hero.datos.map((stat, i) => (
-            <div key={i} {...editable(stat)}>
-              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.valor}</div>
-              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.texto}</div>
+          {[
+            { value: '+1000', label: 'hectáreas de alfalfa' },
+            { value: '+13', label: 'años de experiencia' },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-3xl md:text-4xl font-extrabold text-white">{stat.value}</div>
+              <div className="text-xs md:text-sm text-white/60 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>

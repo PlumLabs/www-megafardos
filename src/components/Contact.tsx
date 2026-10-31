@@ -1,55 +1,61 @@
 import Image from 'next/image'
 import AnimatedSection from './AnimatedSection'
-import { Parrafos, TituloDestacado } from './Texto'
-import type { Home } from '@/content/types'
-import { editable } from '@/lib/editable'
 
-// wa.me needs the number in international format, digits only. Numbers loaded
-// without the country code are assumed to be Argentine mobiles (+54 9).
-const whatsappHref = (telefono: string) => {
-  const digits = telefono.replace(/\D/g, '')
-  return `https://wa.me/${digits.startsWith('54') ? digits : `549${digits}`}`
-}
+const certifications = [
+  {
+    name: 'SENASA',
+    description: 'Certificación del Servicio Nacional de Sanidad y Calidad Agroalimentaria.',
+  },
+  {
+    name: 'BPM',
+    description: 'Buenas Prácticas de Manufactura en nuestra planta.',
+  },
+]
 
-export default function Contact({
-  calidad,
-  contacto,
-}: {
-  calidad: Home['calidad']
-  contacto: Home['contacto']
-}) {
+const whatsappContacts = [
+  { name: 'Emilio Daniotti', phone: '+54 9 3525 48-0178' },
+  { name: 'Franco Daniotti', phone: '+54 9 3525 48-0177' },
+]
+
+// wa.me needs the number in international format, digits only.
+const whatsappHref = (phone: string) => `https://wa.me/${phone.replace(/\D/g, '')}`
+
+export default function Contact() {
   return (
     <section id="contacto" className="py-20 md:py-32 bg-brand-cream">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <AnimatedSection type="reveal-left" {...editable(calidad)}>
+          <AnimatedSection type="reveal-left">
             <div className="relative h-56 md:h-72 rounded-2xl overflow-hidden mb-8 shadow-xl">
               <Image
-                src={calidad.imagen.src}
-                alt={calidad.imagen.alt}
+                src="/images/calidad.webp"
+                alt="Logística de Megafardos del Norte"
                 fill
                 className="object-cover"
               />
             </div>
             <span className="text-xs font-semibold text-brand-gold uppercase tracking-widest">
-              {calidad.etiqueta}
+              Certificaciones
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-brand-green mt-4 leading-tight">
-              <TituloDestacado titulo={calidad.titulo} destacado={calidad.tituloDestacado} className="text-brand-gold" />
+              Calidad
+              <br />
+              <span className="text-brand-gold">garantizada</span>
             </h2>
             <div className="w-16 h-0.5 bg-brand-gold mt-6" />
-            <Parrafos texto={calidad.texto} className="text-brand-green/70 leading-relaxed mt-6" />
+            <p className="text-brand-green/70 leading-relaxed mt-6">
+              Trabajamos para cumplir con los estándares más exigentes del mercado.
+            </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              {calidad.certificaciones.map((cert, i) => (
+              {certifications.map((cert) => (
                 <div
-                  key={i}
-                  {...editable(cert)}
+                  key={cert.name}
                   className="bg-white rounded-xl px-5 py-4 border border-brand-green/5 shadow-sm"
                 >
-                  <div className="font-bold text-brand-green">{cert.nombre}</div>
+                  <div className="font-bold text-brand-green">{cert.name}</div>
                   <div className="text-xs text-brand-green/60 mt-1 max-w-[200px]">
-                    {cert.descripcion}
+                    {cert.description}
                   </div>
                 </div>
               ))}
@@ -57,21 +63,20 @@ export default function Contact({
           </AnimatedSection>
 
           <AnimatedSection type="reveal-right" delay={200}>
-            <div {...editable(contacto)} className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-brand-green/5 border border-brand-green/5">
-              <h3 className="text-2xl font-bold text-brand-green">{contacto.titulo}</h3>
+            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-brand-green/5 border border-brand-green/5">
+              <h3 className="text-2xl font-bold text-brand-green">Contacto</h3>
               <p className="text-brand-green/60 text-sm mt-2 leading-relaxed">
-                {contacto.texto}
+                Comunicate con nosotros por WhatsApp.
               </p>
 
               <div className="mt-8 space-y-4">
-                {contacto.whatsapp.map((contact, i) => (
+                {whatsappContacts.map((contact) => (
                   <a
-                    key={i}
-                    {...editable(contact)}
-                    href={whatsappHref(contact.telefono)}
+                    key={contact.phone}
+                    href={whatsappHref(contact.phone)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`WhatsApp ${contact.nombre}: ${contact.telefono}`}
+                    aria-label={`WhatsApp ${contact.name}: ${contact.phone}`}
                     className="flex items-center gap-4 p-4 bg-brand-green/5 hover:bg-brand-green/10 rounded-xl transition-colors"
                   >
                     <div className="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center shrink-0">
@@ -80,15 +85,14 @@ export default function Contact({
                       </svg>
                     </div>
                     <div>
-                      <div className="text-xs text-brand-green/60">{contact.nombre}</div>
-                      <div className="font-semibold text-brand-green text-sm">{contact.telefono}</div>
+                      <div className="text-xs text-brand-green/60">{contact.name}</div>
+                      <div className="font-semibold text-brand-green text-sm">{contact.phone}</div>
                     </div>
                   </a>
                 ))}
 
-                {contacto.email && (
                 <a
-                  href={`mailto:${contacto.email}`}
+                  href="mailto:info@megafardosdelnorte.com"
                   className="flex items-center gap-4 p-4 bg-brand-green/5 hover:bg-brand-green/10 rounded-xl transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center shrink-0">
@@ -98,14 +102,13 @@ export default function Contact({
                   </div>
                   <div>
                     <div className="text-xs text-brand-green/60">Email</div>
-                    <div className="font-semibold text-brand-green text-sm">{contacto.email}</div>
+                    <div className="font-semibold text-brand-green text-sm">info@megafardosdelnorte.com</div>
                   </div>
                 </a>
-                )}
               </div>
 
               <a
-                href={contacto.mapaUrl}
+                href="https://www.google.com/maps?q=Megafardos+del+Norte,+Zona+rural+camino+a+nintes,+X5220+Jesus+Mar%C3%ADa,+C%C3%B3rdoba"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-brand-green/50 hover:text-brand-gold transition-colors mt-6"
@@ -114,7 +117,7 @@ export default function Contact({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                {contacto.ubicacion}
+                Jesús María, Córdoba
               </a>
             </div>
           </AnimatedSection>
